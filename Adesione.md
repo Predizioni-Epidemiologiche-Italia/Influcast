@@ -1,4 +1,4 @@
-## Adesione a Influcast.
+# Adesione a Influcast.
 
 Ogni gruppo, persona o istituzione che desidera partecipare a Influcast e fornire previsioni settimanali sull'andamento della stagione influenzale deve:
 
