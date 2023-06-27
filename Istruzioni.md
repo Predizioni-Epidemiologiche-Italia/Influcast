@@ -41,28 +41,28 @@ Dove `YYYY` rappresenta l'anno e `WW` la settimana indicata con due cifre (ovver
 I dati della sorveglianza verranno aggiornati nel repository ogni venerdì, in seguito alla pubblicazione del Rapporto InfluNet da parte dell'Istituto Superiore di Sanità. Il dati forniti in una specifica settimana sono riferiti ai valori riportati nella settimana precedente.
 All'interno della cartella `sorveglianza/` che si trova al primo livello del repository sarà presente una cartella per la stagione in corso (esempio: `sorveglianza/2023-2024/`), all'interno della quale verranno verranno caricati ogni settimana i seguenti file:
 
-`- italia-YYYY_WW.csv
-- abruzzo-YYYY_WW.csv
-- basilicata-YYYY_WW.csv
-- calabria-YYYY_WW.csv
-- campania-YYYY_WW.csv
-- emilia_romagna-YYYY_WW.csv
-- friuli_venezia_giulia-YYYY_WW.csv
-- lazio-YYYY_WW.csv
-- liguria-YYYY_WW.csv
-- lombardia-YYYY_WW.csv
-- marche-YYYY_WW.csv
-- molise-YYYY_WW.csv
-- pa_bolzano-YYYY_WW.csv
-- pa_trento-YYYY_WW.csv
-- piemonte-YYYY_WW.csv
-- puglia-YYYY_WW.csv
-- sardegna-YYYY_WW.csv
-- sicilia-YYYY_WW.csv
-- toscana-YYYY_WW.csv
-- umbria-YYYY_WW.csv
-- valle_d_aosta-YYYY_WW.csv
-- veneto-YYYY_WW.csv`
+- `italia-YYYY_WW.csv`
+- `abruzzo-YYYY_WW.csv`
+- `basilicata-YYYY_WW.csv`
+- `calabria-YYYY_WW.csv`
+- `campania-YYYY_WW.csv`
+- `emilia_romagna-YYYY_WW.csv`
+- `friuli_venezia_giulia-YYYY_WW.csv`
+- `lazio-YYYY_WW.csv`
+- `liguria-YYYY_WW.csv`
+- `lombardia-YYYY_WW.csv`
+- `marche-YYYY_WW.csv`
+- `molise-YYYY_WW.csv`
+- `pa_bolzano-YYYY_WW.csv`
+- `pa_trento-YYYY_WW.csv`
+- `piemonte-YYYY_WW.csv`
+- `puglia-YYYY_WW.csv`
+- `sardegna-YYYY_WW.csv`
+- `sicilia-YYYY_WW.csv`
+- `toscana-YYYY_WW.csv`
+- `umbria-YYYY_WW.csv`
+- `valle_d_aosta-YYYY_WW.csv`
+- `veneto-YYYY_WW.csv`
 
 Dove `YYYY` rappresenta l'anno e `WW` la settimana indicata con due cifre (ovvero anteponendo lo 0 per le prime 9 settimane). 
 
