@@ -14,7 +14,7 @@ Tutti i dati delle previsioni inviati dai team aderenti sono soggetti alla licen
 
 __Influcast__ is a participatory project that aims to predict the evolution of the seasonal flu by aggregating predictions from various models.
 
-To participate in the project, you need to follow the instructions in the file: `Adhesion.md`
+To participate in the project, you need to follow the instructions in the file: `Joining.md`
 Details regarding the format and the data upload methods are in the file: `Instructions.md`
 
 All the forecast data sent by the participating teams are subject to the Creative Commons license __CC BY-NC 4.0__ (Attribution - NonCommercial): https://creativecommons.org/licenses/by-nc/4.0/deed.en
