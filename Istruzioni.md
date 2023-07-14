@@ -76,13 +76,13 @@ I file saranno in formato CSV (comma-separated values) e conterranno le seguenti
 - numero_casi
 - numero_assistiti
 
-Le prime due colonne indicano l'anno e la settimana a cui si riferisce il dato di sorveglianza; la terza è un numero decimale che indica l'incidenza rilevata per numero di assistiti; la quarta e la quinta rappresentano rispettivamente il numero di casi rilevati e il numero di assistiti cui è riferito. 
+Le prime due colonne indicano l'anno e la settimana a cui si riferisce il dato di sorveglianza; la terza è un numero decimale che indica l'incidenza rilevata per 1000 assistiti; la quarta e la quinta rappresentano rispettivamente il numero di casi rilevati e il numero di assistiti cui è riferito. 
 
 
 ## Formato richiesto per l'invio dei dati delle previsioni. 
 Per ogni previsione settimanale e per ogni modello partecipante andrà inviato un file al repository (tramite un'operazione di _pull request_). Come anticipato in precedenza, i file delle previsioni avranno un percorso all'interno del repository della forma:
 
-`previsioni/TEAM_X-Model_Y/2024_05.csv`
+`previsioni/Team_X-Modello_Y/2024_05.csv`
 
 I file delle previsioni dovranno essere dei file CSV (comma-separated values) con le seguenti colonne:
 
@@ -133,7 +133,7 @@ __id_valore__: il quantile per il quale si indicano i valori delle previsioni ne
 __orizzonte__: un numero intero che indica la settimana obiettivo della previsione, a partire dalla settimana di riferimento corrispondente al report di sorveglianza. I valori ammessi saranno quindi 1, 2, 3 e 4 ad indicare, rispettivamente, la previsione ad una settimana, a due settimane, a tre settimane o a quattro settimane.
 
 
-__valore__: un numero decimale che indica la previsione, ovvero il valore dell'incidenza stimato al termine della settimana (la domenica) indicata nella colonna _orizzonte_, per il quantile ed il luogo indicati nelle colonne _id_valore_ e _luogo_.
+__valore__: un numero decimale che indica la previsione, ovvero il valore dell'incidenza settimanale stimato (casi settimanali per 1000 assistiti) al termine della settimana (la domenica) indicata nella colonna _orizzonte_, per il quantile e il luogo indicati nelle colonne _id_valore_ e _luogo_.
 
 
 
