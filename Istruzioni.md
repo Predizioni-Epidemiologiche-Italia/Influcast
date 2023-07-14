@@ -26,9 +26,9 @@ Le previsioni andranno riportate sotto forma di quantili. I quantili di ordine 0
 
 
 ## Struttura del repository 
-Tutte le previsioni verranno archiviate all'interno della cartella `previsioni/` che si trova al primo livello del repository. All'interno della cartella `previsioni` si troverà una cartella per la stagione in corso; dentro di essa una cartella per ogni team partecipante a influcast; all'interno di quest'ultima una cartella per ciascun modello associato a quel team. Il nome team ed il nome modello coincideranno con le sigle fornite in fase di adesione. Per ciascun modello il percorso in cui andranno caricati i file delle previsioni avrà la forma: 
+Tutte le previsioni verranno archiviate all'interno della cartella `previsioni/` che si trova al primo livello del repository. All'interno della cartella `previsioni` si troverà una cartella per ogni modello utilizzato per fornire delle previsioni, identificata dal nome del team partecipante a Influcast e dal nome del modello stesso. Il nome team ed il nome modello coincideranno con le sigle fornite in fase di adesione. Per ciascun modello il percorso in cui andranno caricati i file delle previsioni avrà la forma: 
 
-`previsioni/stagione/nome_TEAM/nome_MODELLO/`
+`previsioni/nome_TEAM-nome_MODELLO/`
 
 Ciascun file di previsioni dovrà essere nominato nel seguente modo:
 
@@ -82,22 +82,21 @@ Le prime due colonne indicano l'anno e la settimana a cui si riferisce il dato d
 ## Formato richiesto per l'invio dei dati delle previsioni. 
 Per ogni previsione settimanale e per ogni modello partecipante andrà inviato un file al repository (tramite un'operazione di _pull request_). Come anticipato in precedenza, i file delle previsioni avranno un percorso all'interno del repository della forma:
 
-`previsioni/2023-2024/TEAM-X/ModelY/2024_05.csv`
+`previsioni/TEAM_X-Model_Y/2024_05.csv`
 
 I file delle previsioni dovranno essere dei file CSV (comma-separated values) con le seguenti colonne:
 
 - anno
 - settimana
 - luogo
-- quantile
-- valore_1w
-- valore_2w
-- valore_3w
-- valore_4w
+- tipo_valore
+- id_valore
+- orizzonte
+- valore
 
 
 __anno__, __settimana__: l'anno e la settimana a cui si riferisce la previsione, indicati come numeri interi. Questi devono corrispondere all'anno e alla settimana del report di sorveglianza. Devono inoltre essere gli stessi utilizzati nel nome del file (a meno dello 0 iniziale per le prime 9 settimane dell'anno).
-Per comodità di riferimento il file `previsioni/stagione/settimane.csv` riporta tutte le settimane possibili per la stagione, indicando per ciascuna settimana: anno, numero della settimana, data di inizio e data di fine. 
+Per comodità di riferimento il file `previsioni/settimane_<stagione>.csv` riporta tutte le settimane possibili per la stagione, indicando per ciascuna settimana: anno, numero della settimana, data di inizio e data di fine. 
 
 
 __luogo__: un codice di due caratteri (una stringa) che indica il luogo a cui si riferisce la previsione. I valori ammessi sono i seguenti: IT, 01, 02, 03, 04, 05, 06 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21. Il codice IT indica la previsione a livello nazionale, mentre i codici da 01 a 21 si riferiscono alle regioni secondo la seguente mappatura:
@@ -125,19 +124,17 @@ __luogo__: un codice di due caratteri (una stringa) che indica il luogo a cui si
 - 21 : Veneto
 
 
-__quantile__: il quantile per il quale si indicano i valori delle previsioni nelle colonne seguenti (valore_1w, …, valore_4w), nella forma di numero decimale compreso tra 0 e 1. Per ciascuna previsione è obbligatorio indicare i valori per i seguenti quantili: 0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99.
+__tipo_valore__: questo campo deve sempre contenere la stringa 'quantile'. (Il campo è ridondante in quanto attualmente tutte le previsioni saranno fornite sotto forma di quantili, ma è presente per garantire la compatibilità con infrastrutture simili a livello europeo).
 
 
-__valore_1w__: un numero decimale che indica la previsione ad una settimana, ovvero il valore dell'incidenza stimato al termine della settimana (la domenica), per il quantile ed il luogo indicati. 
+__id_valore__: il quantile per il quale si indicano i valori delle previsioni nella colonna 'valore', nella forma di numero decimale compreso tra 0 e 1. Per ciascuna previsione è obbligatorio indicare i valori per i seguenti quantili: 0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99.
 
 
-__valore_2w__: un numero decimale che indica la previsione a due settimane, ovvero il valore dell'incidenza stimato al termine della settimana (la domenica), per il quantile ed il luogo indicati. 
+__orizzonte__: un numero intero che indica la settimana obiettivo della previsione, a partire dalla settimana di riferimento corrispondente al report di sorveglianza. I valori ammessi saranno quindi 1, 2, 3 e 4 ad indicare, rispettivamente, la previsione ad una settimana, a due settimane, a tre settimane o a quattro settimane.
 
 
-__valore_3w__: un numero decimale che indica la previsione a tre settimane, ovvero il valore dell'incidenza stimato al termine della settimana (la domenica), per il quantile ed il luogo indicati. 
+__valore__: un numero decimale che indica la previsione, ovvero il valore dell'incidenza stimato al termine della settimana (la domenica) indicata nella colonna 'orizzonte', per il quantile ed il luogo indicati nelle colonne 'id_valore' e 'luogo'.
 
-
-__valore_4w__: un numero decimale che indica la previsione a quattro settimane, ovvero il valore dell'incidenza stimato al termine della settimana (la domenica), per il quantile ed il luogo indicati. 
 
 
 Ad esempio, i quantili di ordine 0.025 e 0.975 per una determinata settimana ed un determinato luogo devono rappresentare il 95% dei valori stimati, corrispondenti ad un intervallo di confidenza del 95%.
