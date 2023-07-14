@@ -127,13 +127,13 @@ __luogo__: un codice di due caratteri (una stringa) che indica il luogo a cui si
 __tipo_valore__: questo campo deve sempre contenere la stringa 'quantile'. (Il campo è ridondante in quanto attualmente tutte le previsioni saranno fornite sotto forma di quantili, ma è presente per garantire la compatibilità con infrastrutture simili a livello europeo).
 
 
-__id_valore__: il quantile per il quale si indicano i valori delle previsioni nella colonna 'valore', nella forma di numero decimale compreso tra 0 e 1. Per ciascuna previsione è obbligatorio indicare i valori per i seguenti quantili: 0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99.
+__id_valore__: il quantile per il quale si indicano i valori delle previsioni nella colonna _valore_, nella forma di numero decimale compreso tra 0 e 1. Per ciascuna previsione è obbligatorio indicare i valori per i seguenti quantili: 0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99.
 
 
 __orizzonte__: un numero intero che indica la settimana obiettivo della previsione, a partire dalla settimana di riferimento corrispondente al report di sorveglianza. I valori ammessi saranno quindi 1, 2, 3 e 4 ad indicare, rispettivamente, la previsione ad una settimana, a due settimane, a tre settimane o a quattro settimane.
 
 
-__valore__: un numero decimale che indica la previsione, ovvero il valore dell'incidenza stimato al termine della settimana (la domenica) indicata nella colonna 'orizzonte', per il quantile ed il luogo indicati nelle colonne 'id_valore' e 'luogo'.
+__valore__: un numero decimale che indica la previsione, ovvero il valore dell'incidenza stimato al termine della settimana (la domenica) indicata nella colonna _orizzonte_, per il quantile ed il luogo indicati nelle colonne _id_valore_ e _luogo_.
 
 
 
