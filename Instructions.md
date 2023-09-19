@@ -87,7 +87,7 @@ __anno__, __settimana__: the year and the week to which the forecast refers, ind
 For ease of reference, the `previsioni/settimane_<season>.csv` file lists all possible weeks for the season, indicating for each week: year, week number, start date, and end date.
 
 
-__location__: a two-character code (a string) indicating the location to which the forecast refers. The allowed values are: IT, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21. The IT code indicates the national level forecast, while the codes from 01 to 21 refer to the regions according to the following mapping:
+__luogo__: a two-character code (a string) indicating the location to which the forecast refers. The allowed values are: IT, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21. The IT code indicates the national level forecast, while the codes from 01 to 21 refer to the regions according to the following mapping:
 
 - 01 : Abruzzo
 - 02 : Basilicata
@@ -112,16 +112,16 @@ __location__: a two-character code (a string) indicating the location to which t
 - 21 : Veneto
 
 
-__value_type__: this field must always contain the string 'quantile'. (The field is redundant since all forecasts will currently be provided in the form of quantiles, but it is present to ensure compatibility with similar infrastructures at the European level).
+__tipo_valore__: this field must always contain the string 'quantile'. (The field is redundant since all forecasts will currently be provided in the form of quantiles, but it is present to ensure compatibility with similar infrastructures at the European level).
 
 
-__value_id__: the quantile for which the forecast values are indicated in the _valore_ column, in the form of a decimal number between 0 and 1. For each forecast, it is mandatory to indicate the values for the following quantiles: 0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99.
+__id_valore__: the quantile for which the forecast values are indicated in the _valore_ column, in the form of a decimal number between 0 and 1. For each forecast, it is mandatory to indicate the values for the following quantiles: 0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99.
 
 
-__horizon__: an integer indicating the target week of the forecast, starting from the reference week corresponding to the surveillance report. Therefore, the allowed values will be 1, 2, 3, and 4, indicating the forecast at one week, two weeks, three weeks, or four weeks, respectively.
+__orizzonte__: an integer indicating the target week of the forecast, starting from the reference week corresponding to the surveillance report. Therefore, the allowed values will be 1, 2, 3, and 4, indicating the forecast at one week, two weeks, three weeks, or four weeks, respectively.
 
 
-__value__: a decimal number indicating the forecast, that is, the estimated weekly incidence value (weekly cases per 1000 patients) at the end of the week (on Sunday) indicated in the _orizzonte_ column, for the quantile and the location indicated in the _id_valore_ and _luogo_ columns.
+__valore__: a decimal number indicating the forecast, that is, the estimated weekly incidence value (weekly cases per 1000 patients) at the end of the week (on Sunday) indicated in the _orizzonte_ column, for the quantile and the location indicated in the _id_valore_ and _luogo_ columns.
 
 
 For example, the 0.025 and 0.975 order quantiles for a given week and location must represent 95% of the estimated values, corresponding to a 95% confidence interval.
