@@ -13,4 +13,6 @@ Provide the following information for each model they intend to participate with
 
 Indicate one or more __GitHub accounts__, pre-existing or created for the occasion, with which they will send weekly predictions to the repository. These accounts will be associated with the InfluCast GitHub organization.
 
+Provide an email address to be used to receive information from Influcast (general communications, notifications on the outcome of the prediction submissions, etc.).
+
 The aforementioned information should be sent by email to influcast@isi.it .
