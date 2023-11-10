@@ -6,7 +6,9 @@ __Influcast__ is the first Italian hub for epidemiological forecasts that aggreg
 To view the latest forecasts, visit the project's [website](https://influcast.org/it/).
 
 ### How can I join Influcast?
-To participate in the project, it is necessary to follow the instructions provided in the file: `Adesione.md`. Details regarding the format and the methods of data upload are outlined in the file: `Istruzioni.md`.
+To participate in the project, it is necessary to follow the instructions provided in the file: [`Joining.md`](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/blob/main/Joining.md). Details regarding the format and the methods of data upload are outlined in the [Wiki](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/wiki/Home.en) of this repository. 
+
+For any questions regarding joining Influcast, feel free to contact us via [email](mailto:influcast@isi.it).
 
 ### How does Influcast work?
 During the influenza season, participating teams weekly submit probabilistic forecasts from their models regarding the influenza incidence for the upcoming four weeks. Specifically, Influcast considers the number of reported cases from the network of sentinel doctors across Italy as the target variable for the forecasts. This data is communicated every Friday by the Italian National Institute of Health (ISS) through the Flunews bulletin. The incidence data published by the ISS is for the previous week, while the update of the Influcast platform occurs on the following Tuesday, allowing the teams some time to process the new data and calibrate their models. Consequently, the forecasts published on Influcast on Tuesdays pertain to the previous week (for which there isn't yet a consolidated public data), the current week, and the two subsequent weeks.
