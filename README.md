@@ -9,7 +9,7 @@ __Influcast__ è il primo hub italiano di previsioni epidemiologiche che aggrega
 Per visualizzare le ultime previsioni visita la [pagina web](https://influcast.org/it/) del progetto.
 
 ### Come posso partecipare ad Influcast?
-Per partecipare al progetto è necessario seguire le indicazioni riportate nel file: [`Adesione.md`](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/blob/main/Adesione.md)
+Per partecipare al progetto è necessario seguire le indicazioni riportate [qui](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/wiki/Come-posso-partecipare-ad-Influcast%3F)
 I dettagli riguardanti il formato e le modalità di caricamento dei dati sono riportati nella [Wiki](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/wiki) di questa repository.
 
 Per qualsiasi domanda relativa all'adesione a Influcast, non esitate a contattarci tramite [e-mail](mailto:influcast@isi.it).
