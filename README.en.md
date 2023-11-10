@@ -9,7 +9,9 @@ __Influcast__ is the first Italian hub for epidemiological forecasts that aggreg
 To view the latest forecasts, visit the project's [website](https://influcast.org/it/).
 
 ### How can I join Influcast?
-To participate in the project, it is necessary to follow the instructions provided in the file: [`Joining.md`](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/blob/main/Joining.md). Details regarding the format and the methods of data upload are outlined in the [Wiki](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/wiki/Home.en) of this repository. 
+To participate in the project, it is necessary to follow the instructions provided [here](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/wiki/How-to-join-Influcast). 
+
+Details regarding the format and the methods of data upload are outlined in the [Wiki](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/wiki/Home.en) of this repository. 
 
 For any questions regarding joining Influcast, feel free to contact us via [email](mailto:influcast@isi.it).
 
