@@ -9,7 +9,7 @@ Per visualizzare le ultime previsioni visita la [pagina web](https://influcast.o
 Per partecipare al progetto è necessario seguire le indicazioni riportate nel file: [`Adesione.md`](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/blob/main/Adesione.md)
 I dettagli riguardanti il formato e le modalità di caricamento dei dati sono riportati nella [Wiki](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/wiki) di questa repository.
 
-Per ogni domanda rigurdante l'adesione a Influcast non esitare a contattarci via [email](mailto:influcast@isi.it) 
+Per qualsiasi domanda relativa all'adesione a Influcast, non esitate a contattarci tramite [e-mail](mailto:influcast@isi.it).
 
 ### Come funziona Influcast? 
 Durante la stagione influenzale i team aderenti inviano ogni settimana le previsioni probabilistiche dei loro modelli sull’incidenza influenzale nelle future quattro settimane. In particolare, Influcast considera il numero di casi riportati dalla rete di medici sentinella presenti sul territorio italiano come variabile target per le previsioni. Questo dato viene comunicato ogni venerdì dall’Istituto Superiore di Sanità (ISS) tramite il bollettino Flunews. Il dato di incidenza pubblicato da ISS è relativo alla settimana precedente, mentre l’aggiornamento della piattaforma Influcast avviene il martedì successivo all’aggiornamento, consentendo ai team di disporre di un intervallo di tempo per elaborare il nuovo dato e calibrare i modelli. Di conseguenza, le previsioni pubblicate il martedì su Influcast si riferiscono alla settimana precedente (per cui non esiste ancora un dato consolidato pubblico), alla settimana in corso e alle due successive.
