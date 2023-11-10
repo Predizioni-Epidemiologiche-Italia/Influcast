@@ -1,4 +1,7 @@
 # Influcast 
+![alt text](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/blob/main/Influcast-logo.png)
+
+
 [![it](https://img.shields.io/badge/lang-it-yellow.svg)](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/blob/main/README.md)
 
 __Influcast__ is the first Italian hub for epidemiological forecasts that aggregates estimates produced by different research teams about the future trends of seasonal influenza at both national and regional levels. The project is coordinated and maintained by the [ISI Foundation](https://www.isi.it/en/home) in Turin.
