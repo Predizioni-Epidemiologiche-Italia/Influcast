@@ -1,6 +1,6 @@
-### Italiano
+## Influcast 
 
-__Influcast__ è un progetto partecipativo che mira a prevedere l’evoluzione dell’influenza stagionale aggregando predizioni provenienti da diversi modelli.
+__Influcast__ è il primo hub italiano di previsioni epidemiologiche che aggrega predizioni prodotte da diversi team di ricerca sul futuro andamento dell’influenza stagionale a livello nazionale e regionale. Il progetto è coordinato e mantenuto dalla [Fondazione ISI](https://www.isi.it/en/home) di Torino.
 
 Per partecipare al progetto è necessario seguire le indicazioni riportate nel file: `Adesione.md`
 I dettagli riguardanti il formato e le modalità di caricamento dei dati sono riportati nel file: `Istruzioni.md`
