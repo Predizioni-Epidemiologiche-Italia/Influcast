@@ -1,0 +1,5 @@
+year,week,horizon,horizon_end_date,is_latest,forecast_round
+2023,45,1,2023-11-19,True,0
+2023,45,2,2023-11-26,True,0
+2023,45,3,2023-12-03,True,0
+2023,45,4,2023-12-10,True,0
