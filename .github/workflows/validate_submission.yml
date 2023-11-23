@@ -1,0 +1,180 @@
+# merge submission on the main branch after a pullrequest approval
+name: ValidateSubmission
+on: 
+  pull_request_target:
+    branches: [ main ]
+    paths:
+      - 'previsioni/**'
+      - '!**README**'
+      
+    
+jobs:
+
+  # Firts authenticate user based on PR details
+  validate_request:
+    runs-on: ubuntu-latest
+    outputs: 
+      # output_data: ${{ steps.compile_output.outputs.output_data }}
+      validate_error_msg: ${{ steps.validate.outputs.message }}
+      authenticate_error_msg: ${{ steps.authenticate.outputs.message }}
+      changed_files:  ${{ steps.get_changed_files.outputs.all_changed_files }}
+      is_valid: ${{ steps.validate.outputs.validate == 'success' && steps.authenticate.outputs.authenticate == 'success' }}
+      
+      
+    steps:    
+
+      # Check out the submission repo
+      # -------------------------------------------      
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      
+      # Checkout the python tools repo
+      # used to authenticate and validate the PR
+      # -------------------------------------------      
+      - name: checkout python tools repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: 'Testing-Forecast-Actions/Testing-Tools'
+          ref: 'main'
+          path: './tools'
+
+
+      # Get changes from pull request 
+      # --------------------------------      
+      - name: Get changes
+        id: get_changed_files
+        uses: tj-actions/changed-files@v36
+        
+          
+      # Authenticate the pull_request 
+      # returns as output authentication = { True / False }
+      # -------------------------------      
+      - name: Execute Authentication script
+        id: authenticate
+        env:
+          calling_actor: ${{ github.actor }}
+          changed_files: ${{ steps.get_changed_files.outputs.all_changed_files }}
+          
+        run: python ./tools/.github/scripts/request_authentication/authenticate_request.py
+
+        
+      # If authenticated proceed with validation
+      # returns as output validation = { True / False }
+      # -------------------------------------------      
+      - name: Execute Validation script
+        id: validate
+        env:
+          changed_files: ${{ steps.get_changed_files.outputs.all_changed_files }}
+          
+        run: python ./tools/.github/scripts/forecast_validation/validate.py
+
+      - name: Trace for Debug
+        env:
+          is_valid: ${{ steps.validate.outputs.validate == 'success' && steps.authenticate.outputs.authenticate == 'success' }}
+        run: |
+          echo " Auth: ${{ steps.authenticate.outputs.authenticate }}"
+          echo " Val: ${{ steps.validate.outputs.validate }}"
+          echo " IsVal: $is_valid" 
+
+          
+  # -------------------------------------------
+  # SUCCESS
+  # -------------------------------------------
+  on_successful_validation:
+    runs-on: ubuntu-latest
+    needs: validate_request
+    if: needs.validate_request.outputs.is_valid == 'true'
+
+    steps:
+      - name: DEBUG
+        run: | 
+          echo "Is_Valid: ${{ needs.validate_request.outputs.is_valid }}"
+      
+      # Checkout the forecast repo
+      # ---------------------------
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: "${{ github.event.pull_request.head.sha }}"
+                    
+      # Approve pull request 
+      # ---------------------------
+      - name: Approve Pull Request
+        uses: juliangruber/approve-pull-request-action@v2.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.pull_request.number }}
+
+      # Eventually comment on it
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            All checks completed successfully ! :wave:
+          pr_number: ${{ github.event.pull_request.number }}
+
+      # Merge changes  
+      # ---------------------------    
+      - name: Merge the pull request
+        id: merge_pr
+        run: |
+          gh pr merge --auto --squash $PR_URL
+          echo "status=true" >> $GITHUB_OUTPUT
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.WF_PR_PAT }}
+
+      # Save changes to artifact for later persisting 
+      - name: Save changes to artifact
+        env:
+          changed_files: ${{ needs.validate_request.outputs.changed_files }}
+        run: |
+          echo "{ \"pr-changes\" : \"$changed_files\" }" > pr_changes.json
+        
+      - name: Upload changes
+        uses: actions/upload-artifact@v2
+        with:
+          name: pr_changes
+          path: ./pr_changes.json
+
+      
+  # -------------------------------------------
+  # FAILED
+  # -------------------------------------------
+  on_validation_failed:
+    runs-on: ubuntu-latest
+    needs: validate_request
+    if: needs.validate_request.outputs.is_valid == 'false'
+    
+    steps:
+
+      # DEBUG ONLY
+      - name: DEBUG - DUMP INFO
+        env:
+          changed-files: ${{ needs.validate_request.outputs.changed_files }}
+          
+        run: |
+          echo ">>> Is_Valid: ${{ needs.validate_request.outputs.is_valid }}"
+          echo ">>> FAILED JOB "
+          echo ">>> Changes: $changed-files"
+          echo ">>> Repo: ${{ github.repository }}"
+          echo ">>> SrcPath: $GITHUB_WORKSPACE"
+          echo ">>> Pull request number: ${{ github.event.pull_request.number }}"
+          echo ">>> Git hub actor: ${{ github.actor }}"
+          echo ">>> Authenticate Error Message ${{ needs.validate_request.outputs.authenticate_error_msg  }}"
+          echo ">>> Validate Error Message ${{  needs.validate_request.outputs.validate_error_msg }}"
+
+
+      # Inform the user about what went wrong
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            An error occurred. Validation: ${{  needs.validate_request.outputs.validate_error_msg }}. Authentication: ${{  needs.validate_request.outputs.authenticate_error_msg }}
+          pr_number: ${{ github.event.pull_request.number }}
