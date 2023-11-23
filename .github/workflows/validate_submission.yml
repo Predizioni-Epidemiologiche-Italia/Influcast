@@ -100,7 +100,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.WF_PR_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           ref: "${{ github.event.pull_request.head.sha }}"
                     
       # Approve pull request 
@@ -108,6 +108,7 @@ jobs:
       - name: Approve Pull Request
         uses: juliangruber/approve-pull-request-action@v2.0.0
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ github.event.pull_request.number }}
 
       # Eventually comment on it
