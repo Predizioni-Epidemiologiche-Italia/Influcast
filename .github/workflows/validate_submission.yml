@@ -100,7 +100,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.WF_PR_PAT }}
           ref: "${{ github.event.pull_request.head.sha }}"
                     
       # Approve pull request 
@@ -108,14 +108,12 @@ jobs:
       - name: Approve Pull Request
         uses: juliangruber/approve-pull-request-action@v2.0.0
         with:
-          github-token: ${{ secrets.WF_PR_PAT }}
           number: ${{ github.event.pull_request.number }}
 
       # Eventually comment on it
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v2
         with:
-          GITHUB_TOKEN: ${{ secrets.WF_PR_PAT }}
           message: |
             All checks completed successfully ! :wave:
           pr_number: ${{ github.event.pull_request.number }}
