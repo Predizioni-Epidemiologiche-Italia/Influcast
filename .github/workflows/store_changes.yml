@@ -50,8 +50,8 @@ jobs:
     - name: checkout data repo
       uses: actions/checkout@v3
       with:
-        # token: ${{ secrets.GITHUB_TOKEN }}
-        token: ${{ secrets.WF_PR_PAT }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        # token: ${{ secrets.WF_PR_PAT }}
         repository: 'Predizioni-Epidemiologiche-Italia/Influcast'
         ref: 'main'
         path: './repo/'
