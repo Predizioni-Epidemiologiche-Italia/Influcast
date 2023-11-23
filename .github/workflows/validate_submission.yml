@@ -108,7 +108,7 @@ jobs:
       - name: Approve Pull Request
         uses: juliangruber/approve-pull-request-action@v2.0.0
         with:
-          github-token: ${{ secrets.WF_PR_PAT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ github.event.pull_request.number }}
 
       # Eventually comment on it
@@ -175,7 +175,6 @@ jobs:
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v2
         with:
-          GITHUB_TOKEN: ${{ secrets.WF_PR_PAT }}
           message: |
             An error occurred. Validation: ${{  needs.validate_request.outputs.validate_error_msg }}. Authentication: ${{  needs.validate_request.outputs.authenticate_error_msg }}
           pr_number: ${{ github.event.pull_request.number }}
