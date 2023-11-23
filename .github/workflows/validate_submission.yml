@@ -128,7 +128,8 @@ jobs:
           echo "status=true" >> $GITHUB_OUTPUT
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.WF_PR_PAT }}
+          # GH_TOKEN: ${{ secrets.WF_PR_PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Save changes to artifact for later persisting 
       - name: Save changes to artifact
