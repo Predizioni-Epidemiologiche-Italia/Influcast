@@ -14,7 +14,6 @@ jobs:
   validate_request:
     runs-on: ubuntu-latest
     outputs: 
-      # output_data: ${{ steps.compile_output.outputs.output_data }}
       validate_error_msg: ${{ steps.validate.outputs.message }}
       authenticate_error_msg: ${{ steps.authenticate.outputs.message }}
       changed_files:  ${{ steps.get_changed_files.outputs.all_changed_files }}
