@@ -1,1 +1,26 @@
-{}
+{
+    "changes": [
+        "sorveglianza/2023-2024/abruzzo-2023_46.csv",
+        "sorveglianza/2023-2024/basilicata-2023_46.csv",
+        "sorveglianza/2023-2024/calabria-2023_46.csv",
+        "sorveglianza/2023-2024/campania-2023_46.csv",
+        "sorveglianza/2023-2024/emilia_romagna-2023_46.csv",
+        "sorveglianza/2023-2024/friuli_venezia_giulia-2023_46.csv",
+        "sorveglianza/2023-2024/italia-2023_46.csv",
+        "sorveglianza/2023-2024/lazio-2023_46.csv",
+        "sorveglianza/2023-2024/liguria-2023_46.csv",
+        "sorveglianza/2023-2024/lombardia-2023_46.csv",
+        "sorveglianza/2023-2024/marche-2023_46.csv",
+        "sorveglianza/2023-2024/molise-2023_46.csv",
+        "sorveglianza/2023-2024/pa_bolzano-2023_46.csv",
+        "sorveglianza/2023-2024/pa_trento-2023_46.csv",
+        "sorveglianza/2023-2024/piemonte-2023_46.csv",
+        "sorveglianza/2023-2024/puglia-2023_46.csv",
+        "sorveglianza/2023-2024/sardegna-2023_46.csv",
+        "sorveglianza/2023-2024/sicilia-2023_46.csv",
+        "sorveglianza/2023-2024/toscana-2023_46.csv",
+        "sorveglianza/2023-2024/umbria-2023_46.csv",
+        "sorveglianza/2023-2024/valle_d_aosta-2023_46.csv",
+        "sorveglianza/2023-2024/veneto-2023_46.csv"
+    ]
+}
