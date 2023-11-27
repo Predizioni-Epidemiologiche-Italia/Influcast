@@ -1,1 +1,10 @@
-{}
+{
+    "ISI": [
+        {
+            "model": "FluABCaster",
+            "changes": [
+                "previsioni/ISI-FluABCaster/2023_46.csv"
+            ]
+        }
+    ]
+}
