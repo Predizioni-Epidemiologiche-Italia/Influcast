@@ -14,6 +14,13 @@
                 "previsioni/EpiQMUL-ARIMA_QMUL/2023_46.csv"
             ]
         }
+    ],
+    "TestTeam": [
+        {
+            "model": "TestModel",
+            "changes": [
+                "previsioni/TestTeam-TestModel/2023_46.csv"
+            ]
+        }
     ]
-    
 }
