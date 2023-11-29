@@ -3,7 +3,7 @@ name: Forecast Upload
 on:
   # scheduled submission every Wednesday at 1.30 a.m. 
   # schedule:
-  #   - cron: '30 5 * * 3'  
+  #   - cron: '30 16 * * 3'  
 
   workflow_dispatch:
 
