@@ -1,0 +1,73 @@
+name: "GenerateEnsemble"
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "15 11,23 * * 2,3"
+
+
+jobs:
+  
+  ensemble:
+  # if: github.repository_owner == 'Predizioni-Epidemiologiche-Italia'
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+    # checkout repo
+    - uses: actions/checkout@v3
+      with: 
+        path: './repo/'
+
+    # Checkout the python tools repo
+    # -------------------------------------------      
+    - name: checkout python tools repo
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        repository: 'Predizioni-Epidemiologiche-Italia/hub-tools'
+        ref: 'main'
+        path: './tools/'
+     
+    - uses: r-lib/actions/setup-r@v2
+      with:
+        install-r: false
+        use-public-rspm: true
+        
+    # - name: Installing dependencies
+    #   run: |
+    #     install.packages("remotes")
+    #     remotes::install_github("Infectious-Disease-Modeling-Hubs/hubUtils")
+    #     remotes::install_github("Infectious-Disease-Modeling-Hubs/hubEnsembles")
+    #     install.packages("dplyr")
+    #     install.packages("jsonlite")
+    #     install.packages("optparse")
+    #     install.packages("purrr")
+    #   shell: Rscript {0}
+
+    # - name: Generate Ensemble
+    #   run: |
+    #     # call R script from tools
+    #     Rscript ./tools/R-code/generate-ensemble.R --hub_path "./repo" --agg_fun "median" --model_id "hubEnsemble" --team_id "respicast"
+
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v7
+      with: 
+          cwd: './repo'
+          message: "Update ensemble data"
+          default_author: github_actions
+          push: true
+
+    # Save changes to artifact for later persisting 
+    - name: Save changes to artifact
+      env:
+        changed_files: ${{ needs.validate_request.outputs.changed_files }}
+      run: |
+        echo "{ \"pr-changes\" : \"previsioni/Influcast-Ensemble/2023_46.csv\" }" > pr_changes.json
+          
+    - name: Upload changes
+      uses: actions/upload-artifact@v2
+      with:
+        name: pr_changes
+        path: ./pr_changes.json
+  
