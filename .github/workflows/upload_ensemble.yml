@@ -58,7 +58,7 @@ jobs:
           webhook_url: ${{ secrets.WEB_HOOK_URL }}
           webhook_secret: ${{ secrets.WEB_HOOK_SECRET }}
           data: ${{ steps.get_changes.outputs.packageJson }}
-          data_type: "ensemble"
+          data_type: "forecast"
           season: "NA"
           
         run: |
