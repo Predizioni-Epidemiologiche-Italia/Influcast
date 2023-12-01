@@ -2,8 +2,11 @@ name: "GenerateEnsemble"
 on:
 
   workflow_dispatch:
-  # schedule:
-  #   - cron: "15 11,23 * * 2,3"
+
+  # scheduled run every Wednesday at 03.00 a.m. (Wednesday 02.00 a.m.UTC)
+  # TODO for the time being upload is Thursday at 03.00 a.m. (Thursday 02.00 a.m. UTC)
+  schedule:
+    - cron: '00 02 * * 4'
 
     
 jobs:
