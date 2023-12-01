@@ -60,7 +60,7 @@ jobs:
       env:
         changed_files: ${{ steps.compute_ensemble.outputs.ensemble_file }}
       run: |
-        echo "{ \"pr-changes\" : \"previsioni/Influcast-quantileBaseline/$changed_files\" }" > pr_changes.json
+        echo "{ \"pr-changes\" : \"previsioni/Influcast-Ensemble/$changed_files\" }" > pr_changes.json
           
     - name: Upload changes
       uses: actions/upload-artifact@v2
