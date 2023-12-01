@@ -2,7 +2,7 @@ name: Persist Forecasts and target data changes to json
 
 on:
   workflow_run:
-    workflows: [ValidateSubmission, ValidateSurveillance, GenerateEnsemble]
+    workflows: [ValidateSubmission, ValidateSurveillance, GenerateEnsemble, GenerateBaseline]
       
     types:
       - completed
