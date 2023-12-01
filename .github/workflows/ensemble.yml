@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        repository: 'european-modelling-hubs/hub-tools'
+        repository: 'Predizioni-Epidemiologiche-Italia/hub-tools'
         ref: 'main'
         path: './tools/'
 
