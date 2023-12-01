@@ -60,7 +60,7 @@ jobs:
       env:
         changed_files: ${{ needs.validate_request.outputs.changed_files }}
       run: |
-        echo "{ \"pr-changes\" : \"previsioni/Influcast-Ensemble/2023_46.csv\" }" > pr_changes.json
+        echo "{ \"pr-changes\" : \"previsioni/Influcast-quantileBaseline/2023_46.csv\" }" > pr_changes.json
           
     - name: Upload changes
       uses: actions/upload-artifact@v2
