@@ -3,9 +3,13 @@ name: GenerateBaseline
 on:
 
   workflow_dispatch:
-  # schedule:
-  #   - cron: "15 11,23 * * 2,3"
 
+  # scheduled run every Wednesday at 03.15 a.m. (Wednesday 02.15 a.m. UTC)
+  # TODO for the time being upload is Thursday at 03.15 a.m. (Thursday 02.15 a.m. UTC)
+  schedule:
+    - cron: '15 02 * * 4'
+
+  
     
 jobs:
 
