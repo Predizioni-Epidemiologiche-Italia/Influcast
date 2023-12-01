@@ -1,9 +1,9 @@
-name: Forecast Upload
+name: Ensemble Upload
 
 on:
-  # scheduled submission every Wednesday at 1.30 a.m. 
-  schedule:
-    - cron: '00 23 * * 3'
+  # scheduled submission every Wednesday at  a.m. 
+  # schedule:
+    # - cron: '00 23 * * 3'
 
   workflow_dispatch:
 
@@ -39,7 +39,7 @@ jobs:
       - name: Get changes list
         id: get_changes
         run: |
-          content=`cat ./repo/.github/data-storage/changes_db.json`
+          content=`cat ./repo/.github/data-storage/ensemble_db.json`
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
@@ -77,7 +77,7 @@ jobs:
           wh_response:  ${{ steps.invoke_webhook.outputs.run_results }}
         run: |
           echo "UPLOAD SUCCEEDED -  clear djson db"
-          python ./tools/code/clear_data_storage.py --storage_type "previsioni"
+          python ./tools/code/clear_data_storage.py --storage_type "ensemble"
 
       # RUN FAILURE
       # --------------------------------------------
@@ -88,14 +88,14 @@ jobs:
           
         run: |
           echo "UPLOAD FAILED - Some ingestion failed"
-          python ./tools/code/clear_data_storage.py --storage_type "previsioni" 
+          python ./tools/code/clear_data_storage.py --storage_type "ensemble" 
 
       # ERROR RUN
       # --------------------------------------------
       - name: Error
         if: ${{ steps.invoke_webhook.outputs.run_results.status == 'error'}}
         run: |
-          echo "UPLOAD FAILED -  ignore djson db cleaning"
+          echo "EnsambleUPLOAD FAILED -  ignore djson db cleaning"
 
       # Final commit
       # --------------------------------------------
