@@ -1,0 +1,109 @@
+name: Surveillance Upload
+
+on:
+  # scheduled submission every Tuesday at 23.50 p.m. (Tuesday 22.50 p.m.UTC)
+  schedule:
+    - cron: '50 22 * * 2'
+  
+  workflow_dispatch:
+
+  
+jobs:
+  scheduled-submit:
+    runs-on: ubuntu-latest
+    
+    steps:
+
+      # Checkout the python tools repo
+      # used to authenticate and validate the PR
+      # -------------------------------------------      
+      - name: checkout python tools repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: 'Predizioni-Epidemiologiche-Italia/hub-tools'
+          ref: 'main'
+          path: './tools/'
+
+
+      - name: checkout data repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: 'Predizioni-Epidemiologiche-Italia/Influcast'
+          ref: 'main'
+          path: './repo/'
+          
+    
+      # Get the list of changes from a json file 
+      - name: Get changes list
+        id: get_changes
+        run: |
+          content=`cat ./repo/.github/data-storage/target_db.json`
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=packageJson::$content"
+          
+      - run: |
+          echo "${{ steps.get_changes.outputs.packageJson }}"
+
+              
+      # Trigger server-side updating and UI deploy
+      # --------------------------------------------
+      # WEBHOOK
+      - name: Invoke deployment hook
+        id: invoke_webhook
+        env:
+          webhook_url: ${{ secrets.WEB_HOOK_URL }}
+          webhook_secret: ${{ secrets.WEB_HOOK_SECRET }}
+          data: ${{ steps.get_changes.outputs.packageJson }}
+          data_type: "surveillance"
+          season: "2023-2024"
+          
+        run: |
+          pip install requests
+          python ./tools/code/workflow_webhook.py
+
+      - name: trace only
+        run: |
+          echo "webhook results: ${{ steps.invoke_webhook.outputs.run_results }}"
+
+      # SUCCESSFUL RUN
+      # --------------------------------------------
+      - name: Successful run
+        if: ${{ fromJSON(steps.invoke_webhook.outputs.run_results).status == 'success'}}
+        env:
+          wh_response:  ${{ steps.invoke_webhook.outputs.run_results }}
+        run: |
+          echo "UPLOAD SUCCEEDED -  clear djson db"
+          python ./tools/code/clear_data_storage.py --storage_type "target"
+
+      # RUN FAILURE
+      # --------------------------------------------
+      - name: Some ingestion failed
+        if: ${{ fromJSON(steps.invoke_webhook.outputs.run_results).status == 'failure'}}
+        env:
+          wh_response:  ${{ steps.invoke_webhook.outputs.run_results }}
+          
+        run: |
+          echo "UPLOAD FAILED - Some ingestion failed"
+          python ./tools/code/clear_data_storage.py --storage_type "target" 
+
+      # ERROR RUN
+      # --------------------------------------------
+      - name: Error
+        if: ${{ steps.invoke_webhook.outputs.run_results.status == 'error'}}
+        run: |
+          echo "UPLOAD FAILED -  ignore djson db cleaning"
+
+      # Final commit
+      # --------------------------------------------
+      - name: Commit changes
+        if: ${{ fromJSON(steps.invoke_webhook.outputs.run_results).status == 'failure' || fromJSON(steps.invoke_webhook.outputs.run_results).status == 'success' }}
+        uses: EndBug/add-and-commit@v7
+        with: 
+          cwd: './repo'
+          message: "Update model-output db json"
+          default_author: github_actions
+          push: true

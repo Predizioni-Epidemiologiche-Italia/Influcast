@@ -1,9 +1,9 @@
 {
-    "TestTeam": [
+    "ISI": [
         {
-            "model": "TestModel",
+            "model": "FluABCaster",
             "changes": [
-                "previsioni/TestTeam-TestModel/2023_31.csv"
+                "previsioni/ISI-FluABCaster/2023_47.csv"
             ]
         }
     ]

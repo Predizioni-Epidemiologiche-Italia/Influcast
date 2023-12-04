@@ -49,6 +49,13 @@ jobs:
         id: get_changed_files
         uses: tj-actions/changed-files@v36
         
+      # Run Pyton code
+      # -------------------------
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+    
+      - run: pip install isoweek==1.3.3
           
       # Authenticate the pull_request 
       # returns as output authentication = { True / False }
