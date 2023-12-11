@@ -12,6 +12,7 @@ on:
 jobs:
 
   ensemble_job:
+    if: github.repository_owner == 'Predizioni-Epidemiologiche-Italia'
     runs-on: ubuntu-latest
     steps:
 
