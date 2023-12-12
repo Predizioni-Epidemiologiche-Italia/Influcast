@@ -4,13 +4,14 @@ on:
   # scheduled submission every Wednesday at 04.00 a.m. (Wednesday 03.00 a.m.UTC)
   # TODO for the time being upload is Thursday at 04.00 a.m. (Thursday 03.00 a.m. UTC)
   schedule:
-    - cron: '00 03 * * 4'
+    - cron: '00 03 * * 3'
   
   workflow_dispatch:
 
   
 jobs:
   scheduled-submit:
+    if: github.repository_owner == 'Predizioni-Epidemiologiche-Italia'
     runs-on: ubuntu-latest
     
     steps:
