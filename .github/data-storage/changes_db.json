@@ -12,5 +12,13 @@
                 "previsioni/EpiQMUL-ARIMA_QMUL/2023_48.csv"
             ]
         }
+    ],
+    "ISI": [
+        {
+            "model": "FluABCaster",
+            "changes": [
+                "previsioni/ISI-FluABCaster/2023_48.csv"
+            ]
+        }
     ]
 }
