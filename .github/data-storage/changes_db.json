@@ -1,16 +1,1 @@
-{
-    "EpiQMUL": [
-        {
-            "model": "SEIR_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-SEIR_QMUL/2023_48.csv"
-            ]
-        },
-        {
-            "model": "ARIMA_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-ARIMA_QMUL/2023_48.csv"
-            ]
-        }
-    ]
-}
+{}
