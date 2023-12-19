@@ -19,6 +19,12 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2023_49.csv"
             ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2023_49.csv"
+            ]
         }
     ],
     "CSL_PoliTo": [
