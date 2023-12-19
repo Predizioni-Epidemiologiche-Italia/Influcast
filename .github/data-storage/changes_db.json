@@ -25,6 +25,12 @@
             "changes": [
                 "previsioni/ISI-IPSICast/2023_49.csv"
             ]
+        },
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2023_49.csv"
+            ]
         }
     ],
     "CSL_PoliTo": [
