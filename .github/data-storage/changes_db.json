@@ -3,13 +3,13 @@
         {
             "model": "SEIR_QMUL",
             "changes": [
-                "previsioni/EpiQMUL-SEIR_QMUL/2023_48.csv"
+                "previsioni/EpiQMUL-SEIR_QMUL/2023_49.csv"
             ]
         },
         {
             "model": "ARIMA_QMUL",
             "changes": [
-                "previsioni/EpiQMUL-ARIMA_QMUL/2023_48.csv"
+                "previsioni/EpiQMUL-ARIMA_QMUL/2023_49.csv"
             ]
         }
     ],
@@ -17,19 +17,13 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2023_48.csv"
+                "previsioni/ISI-FluABCaster/2023_49.csv"
             ]
         },
         {
             "model": "IPSICast",
             "changes": [
-                "previsioni/ISI-IPSICast/2023_48.csv"
-            ]
-        },
-        {
-            "model": "GLEAM",
-            "changes": [
-                "previsioni/ISI-GLEAM/2023_48.csv"
+                "previsioni/ISI-IPSICast/2023_49.csv"
             ]
         }
     ],
@@ -37,7 +31,7 @@
         {
             "model": "metaFlu",
             "changes": [
-                "previsioni/CSL_PoliTo-metaFlu/2023_48.csv"
+                "previsioni/CSL_PoliTo-metaFlu/2023_49.csv"
             ]
         }
     ],
@@ -45,7 +39,7 @@
         {
             "model": "DeepRE",
             "changes": [
-                "previsioni/ev_and_modelers-DeepRE/2023_48.csv"
+                "previsioni/ev_and_modelers-DeepRE/2023_49.csv"
             ]
         }
     ]
