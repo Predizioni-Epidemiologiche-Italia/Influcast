@@ -1,17 +1,9 @@
 {
-    "EpiQMUL": [
-        {
-            "model": "SEIR_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-SEIR_QMUL/2023_49.csv"
-            ]
-        }
-    ],
     "ISI": [
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2023_49.csv"
+                "previsioni/ISI-FluABCaster/2023_50.csv"
             ]
         }
     ]
