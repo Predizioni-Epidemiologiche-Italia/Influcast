@@ -28,5 +28,13 @@
                 "previsioni/ev_and_modelers-DeepRE/2023_51.csv"
             ]
         }
+    ],
+    "ISI": [
+        {
+            "model": "FluABCaster",
+            "changes": [
+                "previsioni/ISI-FluABCaster/2023_51.csv"
+            ]
+        }
     ]
 }
