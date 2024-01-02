@@ -41,6 +41,12 @@
             "changes": [
                 "previsioni/ISI-IPSICast/2023_51.csv"
             ]
+        },
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2023_51.csv"
+            ]
         }
     ]
 }
