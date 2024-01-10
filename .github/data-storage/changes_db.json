@@ -1,1 +1,10 @@
-{}
+{
+    "FBK_HE": [
+        {
+            "model": "REST_HE",
+            "changes": [
+                "previsioni/FBK_HE-REST_HE/2023_52.csv"
+            ]
+        }
+    ]
+}
