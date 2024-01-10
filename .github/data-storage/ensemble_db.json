@@ -1,10 +1,1 @@
-{
-    "Influcast": [
-        {
-            "model": "Ensemble",
-            "changes": [
-                "previsioni/Influcast-Ensemble/2023_52.csv"
-            ]
-        }
-    ]
-}
+{}
