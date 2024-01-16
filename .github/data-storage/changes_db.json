@@ -1,51 +1,29 @@
 {
-    "EpiQMUL": [
-        {
-            "model": "SEIR_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-SEIR_QMUL/2023_52.csv"
-            ]
-        },
-        {
-            "model": "ARIMA_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-ARIMA_QMUL/2023_52.csv"
-            ]
-        }
-    ],
     "ISI": [
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2023_52.csv"
+                "previsioni/ISI-FluABCaster/2024_01.csv"
             ]
         },
         {
             "model": "IPSICast",
             "changes": [
-                "previsioni/ISI-IPSICast/2023_52.csv"
+                "previsioni/ISI-IPSICast/2024_01.csv"
+            ]
+        }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "SEIR_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIR_QMUL/2024_01.csv"
             ]
         },
         {
-            "model": "GLEAM",
+            "model": "ARIMA_QMUL",
             "changes": [
-                "previsioni/ISI-GLEAM/2023_52.csv"
-            ]
-        }
-    ],
-    "FBK_HE": [
-        {
-            "model": "REST_HE",
-            "changes": [
-                "previsioni/FBK_HE-REST_HE/2023_52.csv"
-            ]
-        }
-    ],
-    "ev_and_modelers": [
-        {
-            "model": "DeepRE",
-            "changes": [
-                "previsioni/ev_and_modelers-DeepRE/2023_52.csv"
+                "previsioni/EpiQMUL-ARIMA_QMUL/2024_01.csv"
             ]
         }
     ],
@@ -53,7 +31,23 @@
         {
             "model": "metaFlu",
             "changes": [
-                "previsioni/CSL_PoliTo-metaFlu/2023_52.csv"
+                "previsioni/CSL_PoliTo-metaFlu/2024_01.csv"
+            ]
+        }
+    ],
+    "ev_and_modelers": [
+        {
+            "model": "DeepRE",
+            "changes": [
+                "previsioni/ev_and_modelers-DeepRE/2024_01.csv"
+            ]
+        }
+    ],
+    "FBK_HE": [
+        {
+            "model": "REST_HE",
+            "changes": [
+                "previsioni/FBK_HE-REST_HE/2024_01.csv"
             ]
         }
     ]
