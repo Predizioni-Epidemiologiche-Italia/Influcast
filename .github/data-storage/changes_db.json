@@ -13,6 +13,12 @@
             "changes": [
                 "previsioni/EpiQMUL-SEIR_QMUL/2024_02.csv"
             ]
+        },
+        {
+            "model": "ARIMA_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-ARIMA_QMUL/2024_02.csv"
+            ]
         }
     ],
     "FBK_HE": [
