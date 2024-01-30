@@ -33,6 +33,12 @@
             "changes": [
                 "previsioni/ISI-IPSICast/2024_03.csv"
             ]
+        },
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2024_03.csv"
+            ]
         }
     ],
     "ev_and_modelers": [
