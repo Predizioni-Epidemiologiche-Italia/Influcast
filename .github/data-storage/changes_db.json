@@ -28,5 +28,13 @@
                 "previsioni/EpiQMUL-ARIMA_QMUL/2024_04.csv"
             ]
         }
+    ],
+    "CSL_PoliTo": [
+        {
+            "model": "metaFlu",
+            "changes": [
+                "previsioni/CSL_PoliTo-metaFlu/2024_04.csv"
+            ]
+        }
     ]
 }
