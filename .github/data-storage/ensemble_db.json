@@ -1,16 +1,1 @@
-{
-    "Influcast": [
-        {
-            "model": "Ensemble",
-            "changes": [
-                "previsioni/Influcast-Ensemble/2024_06.csv"
-            ]
-        },
-        {
-            "model": "quantileBaseline",
-            "changes": [
-                "previsioni/Influcast-quantileBaseline/2024_06.csv"
-            ]
-        }
-    ]
-}
+{}
