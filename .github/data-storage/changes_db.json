@@ -22,5 +22,13 @@
                 "previsioni/CSL_PoliTo-metaFlu/2024_07.csv"
             ]
         }
+    ],
+    "ISI": [
+        {
+            "model": "FluABCaster",
+            "changes": [
+                "previsioni/ISI-FluABCaster/2024_07.csv"
+            ]
+        }
     ]
 }
