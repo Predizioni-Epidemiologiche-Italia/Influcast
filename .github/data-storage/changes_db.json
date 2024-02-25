@@ -1,25 +1,9 @@
 {
-    "CSL_PoliTo": [
+    "ev_and_modelers": [
         {
-            "model": "metaFlu",
+            "model": "DeepRE",
             "changes": [
-                "previsioni/CSL_PoliTo-metaFlu/2024_06.csv"
-            ]
-        }
-    ],
-    "FBK_HE": [
-        {
-            "model": "REST_HE",
-            "changes": [
-                "previsioni/FBK_HE-REST_HE/2024_06.csv"
-            ]
-        }
-    ],
-    "EpiQMUL": [
-        {
-            "model": "SEIR_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-SEIR_QMUL/2024_06.csv"
+                "previsioni/ev_and_modelers-DeepRE/2024_07.csv"
             ]
         }
     ]
