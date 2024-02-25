@@ -1,1 +1,10 @@
-{}
+{
+    "ev_and_modelers": [
+        {
+            "model": "DeepRE",
+            "changes": [
+                "previsioni/ev_and_modelers-DeepRE/2024_07.csv"
+            ]
+        }
+    ]
+}
