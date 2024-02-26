@@ -30,5 +30,13 @@
                 "previsioni/ISI-FluABCaster/2024_07.csv"
             ]
         }
+    ],
+    "FBK_HE": [
+        {
+            "model": "REST_HE",
+            "changes": [
+                "previsioni/FBK_HE-REST_HE/2024_07.csv"
+            ]
+        }
     ]
 }
