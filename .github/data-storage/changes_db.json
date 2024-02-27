@@ -29,6 +29,12 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2024_07.csv"
             ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2024_07.csv"
+            ]
         }
     ],
     "FBK_HE": [
