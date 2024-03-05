@@ -21,6 +21,12 @@
             "changes": [
                 "previsioni/EpiQMUL-SEIR_QMUL/2024_08.csv"
             ]
+        },
+        {
+            "model": "ARIMA_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-ARIMA_QMUL/2024_08.csv"
+            ]
         }
     ],
     "ev_and_modelers": [
