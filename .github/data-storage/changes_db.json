@@ -22,5 +22,13 @@
                 "previsioni/FBK_HE-REST_HE/2024_09.csv"
             ]
         }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "SEIR_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIR_QMUL/2024_09.csv"
+            ]
+        }
     ]
 }
