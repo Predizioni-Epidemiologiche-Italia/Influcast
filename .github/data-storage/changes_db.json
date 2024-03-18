@@ -3,15 +3,7 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2024_09.csv"
-            ]
-        }
-    ],
-    "CSL_PoliTo": [
-        {
-            "model": "metaFlu",
-            "changes": [
-                "previsioni/CSL_PoliTo-metaFlu/2024_09.csv"
+                "previsioni/ISI-FluABCaster/2024_10.csv"
             ]
         }
     ]
