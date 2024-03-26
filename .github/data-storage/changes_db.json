@@ -35,6 +35,12 @@
             "changes": [
                 "previsioni/EpiQMUL-SEIR_QMUL/2024_11.csv"
             ]
+        },
+        {
+            "model": "ARIMA_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-ARIMA_QMUL/2024_11.csv"
+            ]
         }
     ]
 }
