@@ -13,6 +13,12 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2024_12.csv"
             ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2024_12.csv"
+            ]
         }
     ]
 }
