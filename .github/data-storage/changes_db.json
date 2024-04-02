@@ -48,5 +48,13 @@
                 "previsioni/CSL_PoliTo-metaFlu/2024_12.csv"
             ]
         }
+    ],
+    "ev_and_modelers": [
+        {
+            "model": "DeepRE",
+            "changes": [
+                "previsioni/ev_and_modelers-DeepRE/2024_12.csv"
+            ]
+        }
     ]
 }
