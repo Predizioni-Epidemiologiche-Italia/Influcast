@@ -25,6 +25,12 @@
             "changes": [
                 "previsioni/ISI-IPSICast/2024_12.csv"
             ]
+        },
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2024_12.csv"
+            ]
         }
     ],
     "FBK_HE": [
