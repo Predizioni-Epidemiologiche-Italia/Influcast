@@ -34,5 +34,13 @@
                 "previsioni/FBK_HE-REST_HE/2024_12.csv"
             ]
         }
+    ],
+    "CSL_PoliTo": [
+        {
+            "model": "metaFlu",
+            "changes": [
+                "previsioni/CSL_PoliTo-metaFlu/2024_12.csv"
+            ]
+        }
     ]
 }
