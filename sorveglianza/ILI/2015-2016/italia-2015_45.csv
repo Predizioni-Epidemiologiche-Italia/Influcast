@@ -1,5 +1,5 @@
-anno,settimana,incidenza,numero_casi,numero_assistiti
-2015,42,0.4,425,1065225
-2015,43,0.5,604,1204096
-2015,44,0.68,842,1245366
-2015,45,0.76,966,1264970
+anno,settimana,incidenza,numero_casi,numero_assistiti,target
+2015,42,0.4,425,1065225,ILI
+2015,43,0.5,604,1204096,ILI
+2015,44,0.68,842,1245366,ILI
+2015,45,0.76,966,1264970,ILI

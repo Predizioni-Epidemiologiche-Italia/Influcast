@@ -1,5 +1,5 @@
-anno,settimana,numero_casi,numero_assistiti,incidenza
-2023,45,78.0,16959.0,4.6
-2023,46,117.0,18045.0,6.48
-2023,47,119.0,18148.0,6.56
-2023,48,90.0,18395.0,4.89
+anno,settimana,numero_casi,numero_assistiti,incidenza,target
+2023,45,78.0,16959.0,4.6,ILI
+2023,46,117.0,18045.0,6.48,ILI
+2023,47,119.0,18148.0,6.56,ILI
+2023,48,90.0,18395.0,4.89,ILI

@@ -1,5 +1,5 @@
-anno,settimana,incidenza,numero_casi,numero_assistiti
-2020,49,1.57,7.0,4446.0
-2020,50,1.85,5.0,2704.0
-2020,51,2.26,13.0,5745.0
-2020,52,1.63,6.0,3689.0
+anno,settimana,incidenza,numero_casi,numero_assistiti,target
+2020,49,1.57,7.0,4446.0,ILI
+2020,50,1.85,5.0,2704.0,ILI
+2020,51,2.26,13.0,5745.0,ILI
+2020,52,1.63,6.0,3689.0,ILI

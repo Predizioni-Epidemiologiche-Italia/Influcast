@@ -1,2 +1,2 @@
-anno,settimana,incidenza,numero_casi,numero_assistiti
-2021,44,3.13,757.0,241530.0
+anno,settimana,incidenza,numero_casi,numero_assistiti,target
+2021,44,3.13,757.0,241530.0,ILI

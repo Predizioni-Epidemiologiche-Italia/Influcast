@@ -1,2 +1,2 @@
-anno,settimana,incidenza,numero_casi,numero_assistiti
-2006,42,0.26,216,839158
+anno,settimana,incidenza,numero_casi,numero_assistiti,target
+2006,42,0.26,216,839158,ILI

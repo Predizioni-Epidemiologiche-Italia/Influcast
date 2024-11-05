@@ -1,5 +1,5 @@
-anno,settimana,incidenza,numero_casi,numero_assistiti
-2020,49,0.0,0.0,0.0
-2020,50,0.0,0.0,0.0
-2020,51,0.0,0.0,0.0
-2020,52,0.0,0.0,0.0
+anno,settimana,incidenza,numero_casi,numero_assistiti,target
+2020,49,0.0,0.0,0.0,ILI
+2020,50,0.0,0.0,0.0,ILI
+2020,51,0.0,0.0,0.0,ILI
+2020,52,0.0,0.0,0.0,ILI

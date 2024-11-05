@@ -1,5 +1,5 @@
-anno,settimana,incidenza,numero_casi,numero_assistiti
-2013,43,0.66,112.0,168908.0
-2013,44,0.69,124.0,178938.0
-2013,45,0.78,149.0,190039.0
-2013,46,0.72,141.0,195620.0
+anno,settimana,incidenza,numero_casi,numero_assistiti,target
+2013,43,0.66,112.0,168908.0,ILI
+2013,44,0.69,124.0,178938.0,ILI
+2013,45,0.78,149.0,190039.0,ILI
+2013,46,0.72,141.0,195620.0,ILI

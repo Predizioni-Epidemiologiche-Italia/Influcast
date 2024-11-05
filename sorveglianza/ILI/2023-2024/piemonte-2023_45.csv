@@ -1,2 +1,2 @@
-anno,settimana,numero_casi,numero_assistiti,incidenza
-2023,45,705.0,85667.0,8.23
+anno,settimana,numero_casi,numero_assistiti,incidenza,target
+2023,45,705.0,85667.0,8.23,ILI

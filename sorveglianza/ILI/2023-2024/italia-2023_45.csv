@@ -1,5 +1,5 @@
-anno,settimana,numero_casi,numero_assistiti,incidenza
-2023,42,8424,1763287,4.78
-2023,43,8797,1725399,5.1
-2023,44,8614,1646158,5.23
-2023,45,8358,1310565,6.38
+anno,settimana,numero_casi,numero_assistiti,incidenza,target
+2023,42,8424,1763287,4.78,ILI
+2023,43,8797,1725399,5.1,ILI
+2023,44,8614,1646158,5.23,ILI
+2023,45,8358,1310565,6.38,ILI

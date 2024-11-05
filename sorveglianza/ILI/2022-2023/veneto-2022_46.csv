@@ -1,5 +1,5 @@
-anno,settimana,incidenza,numero_casi,numero_assistiti
-2022,43,0.0,0.0,0.0
-2022,44,0.0,0.0,0.0
-2022,45,4.53,280.0,61833.0
-2022,46,10.74,1098.0,102231.0
+anno,settimana,incidenza,numero_casi,numero_assistiti,target
+2022,43,0.0,0.0,0.0,ILI
+2022,44,0.0,0.0,0.0,ILI
+2022,45,4.53,280.0,61833.0,ILI
+2022,46,10.74,1098.0,102231.0,ILI

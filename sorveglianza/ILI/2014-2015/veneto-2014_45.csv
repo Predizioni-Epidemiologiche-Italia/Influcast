@@ -1,2 +1,2 @@
-anno,settimana,incidenza,numero_casi,numero_assistiti
-2014,45,0.35,33.0,93059.0
+anno,settimana,incidenza,numero_casi,numero_assistiti,target
+2014,45,0.35,33.0,93059.0,ILI
