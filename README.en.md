@@ -21,7 +21,7 @@ During the influenza season, participating teams weekly submit probabilistic for
 The forecasts from individual models are displayed alongside historical data, enabling the perspective of each model on the short-term evolution of influenza incidence in Italy and its regions to be captured. Finally, the forecasts from each model are combined to produce an ensemble prediction .
 
 ### Data Sources
-Influcast utilizes processed data made available in machine-readable format within this repository: https://github.com/fbranda/influnet
+Influcast utilizes data processed and made available by the Istituto Superiore di Sanità through the Integrated Surveillance System [RespiVirNet](https://www.epicentro.iss.it/influenza/respivirnet).
 
 
 All the forecast data sent by the participating teams are subject to the Creative Commons license __CC BY-NC 4.0__ (Attribution - NonCommercial): https://creativecommons.org/licenses/by-nc/4.0/deed.en
