@@ -21,6 +21,6 @@ Durante la stagione influenzale, i team aderenti inviano ogni settimana le previ
 Le previsioni dei singoli modelli vengono visualizzate insieme ai dati storici, consentendo di cogliere la prospettiva di ciascun modello sull'evoluzione dell'incidenza delle sindromi simil-influenzali nel breve termine in Italia e nelle sue regioni. Infine, le previsioni di ciascun modello vengono combinate in modo da produrre una predizione di ensemble.
 
 ### Sorgenti dati
-Influcast utilizza i dati elaborati e resi disponibili dall'Istituto Superiore di Sanità tramite il Sistema di Sorveglianza Integrata RespiVirNet.
+Influcast utilizza i dati elaborati e resi disponibili dall'Istituto Superiore di Sanità tramite il Sistema di Sorveglianza Integrata [RespiVirNet](https://www.epicentro.iss.it/influenza/respivirnet).
 
 Tutti i dati delle previsioni inviati dai team aderenti sono soggetti alla licenza Creative Commons __CC BY-NC 4.0__ (Attribuzione - Non commerciale): https://creativecommons.org/licenses/by-nc/4.0/deed.it
