@@ -1,10 +1,10 @@
 {
-  "TestTeam": [
+    "TestTeam": [
         {
             "model": "TestModel",
             "changes": [
                 "previsioni/TestTeam-TestModel/2024_43.csv"
             ]
         }
-  ]
+    ]
 }
