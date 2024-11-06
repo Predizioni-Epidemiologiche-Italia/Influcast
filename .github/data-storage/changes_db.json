@@ -1,9 +1,9 @@
 {
-    "TestTeam": [
+    "ISI": [
         {
-            "model": "TestModel",
+            "model": "GLEAM",
             "changes": [
-                "previsioni/TestTeam-TestModel/2024_43.csv"
+                "previsioni/ISI-GLEAM/2024_43.csv"
             ]
         }
     ]
