@@ -1,1 +1,13 @@
-{}
+{
+  "season": "2024-2025",
+  "targets": [
+		{
+      "name": "ILI",
+      "changes": ["sorveglianza/ILI/2024-2025/abruzzo-2024_43-ILI.csv"]
+    },
+ 		{
+      "name": "ILI",
+      "changes": ["sorveglianza/ILI+_FLU/2024-2025/Italia-2024_43-ILI+_FLU_A.csv"]
+    }
+  ]
+}
