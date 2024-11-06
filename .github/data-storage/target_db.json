@@ -6,7 +6,7 @@
       "changes": ["sorveglianza/ILI/2024-2025/abruzzo-2024_43-ILI.csv"]
     },
  		{
-      "name": "ILI",
+      "name": "ILI+_FLU_A",
       "changes": ["sorveglianza/ILI+_FLU/2024-2025/italia-2024_43-ILI+_FLU_A.csv"]
     }
   ]
