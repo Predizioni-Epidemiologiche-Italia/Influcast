@@ -20,6 +20,8 @@ Durante la stagione influenzale, i team aderenti inviano ogni settimana le previ
 
 Le previsioni dei singoli modelli vengono visualizzate insieme ai dati storici, consentendo di cogliere la prospettiva di ciascun modello sull'evoluzione dell'incidenza delle sindromi simil-influenzali nel breve termine in Italia e nelle sue regioni. Infine, le previsioni di ciascun modello vengono combinate in modo da produrre una predizione di ensemble.
 
+**Nota**: a partire dalla stagione 2024/25, Influcast supporta anche nuovi target di previsione che combinano incidenza ILI con informazioni provenienti dalla sorveglianza virologica dei virus respiratori, in modo da ottenere un segnale di incidenza maggiormente specifico per l'Influenza. Maggiori dettagli sui target di previsione e sulla metodologia associata [qui](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/wiki/Target-di-previsione-e-dati-di-sorveglianza).
+
 ### Sorgenti dati
 Influcast utilizza i dati elaborati e resi disponibili dall'Istituto Superiore di Sanità tramite il Sistema di Sorveglianza Integrata [RespiVirNet](https://www.epicentro.iss.it/influenza/respivirnet).
 
