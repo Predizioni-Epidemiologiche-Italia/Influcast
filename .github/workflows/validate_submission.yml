@@ -145,7 +145,7 @@ jobs:
           echo "{ \"pr-changes\" : \"$changed_files\" }" > pr_changes.json
         
       - name: Upload changes
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: pr_changes
           path: ./pr_changes.json
