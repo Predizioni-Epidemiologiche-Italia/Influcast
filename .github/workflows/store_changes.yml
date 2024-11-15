@@ -17,7 +17,7 @@ jobs:
     steps:
 
     - name: Download workflow artifact
-      uses: dawidd6/action-download-artifact@v2.11.0
+      uses: dawidd6/action-download-artifact@v6
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         workflow: validate-submission.yml
