@@ -3,7 +3,19 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2024_13.csv"
+                "previsioni/ISI-FluABCaster/2024_45.csv"
+            ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2024_45.csv"
+            ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2024_45.csv"
             ]
         }
     ]

@@ -46,7 +46,7 @@ jobs:
       with:
         python-version: '3.10' 
     
-    - run: pip install pandas==1.2.5 numpy==1.22.4 isoweek==1.3.3
+    - run: pip install pandas numpy==1.22.4 isoweek==1.3.3
     
     - name: Pyhton
       id: compute_baseline
