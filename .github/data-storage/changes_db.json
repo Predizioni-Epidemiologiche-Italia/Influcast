@@ -17,6 +17,40 @@
             "changes": [
                 "previsioni/ISI-IPSICast/2024_45.csv"
             ]
+        },
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2024_45.csv"
+            ]
+        }
+    ],
+    "FBK_HE": [
+        {
+            "model": "REST_HE",
+            "changes": [
+                "previsioni/FBK_HE-REST_HE/2024_45.csv"
+            ]
+        }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "ARIMA_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-ARIMA_QMUL/2024_45.csv"
+            ]
+        },
+        {
+            "model": "SEIR_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIR_QMUL/2024_45.csv"
+            ]
+        },
+        {
+            "model": "SEIRaugment_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIRaugment_QMUL/2024_45.csv"
+            ]
         }
     ]
 }
