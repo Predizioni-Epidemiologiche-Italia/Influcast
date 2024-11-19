@@ -13,14 +13,16 @@ Per partecipare al progetto, segui le indicazioni riportate [qui](https://github
 
 I dettagli riguardanti il formato e le modalità di caricamento dei dati sono disponibili nella [Wiki](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/wiki) di questa repository.
 
-Per domande sull'adesione a Influcast, contattaci tramite [e-mail](mailto:influcast@isi.it).
+Per domande sull'adesione a Influcast, contattaci tramite email (influcast@isi.it).
 
 ### Come funziona Influcast? 
 Durante la stagione influenzale, i team aderenti inviano ogni settimana le previsioni probabilistiche dei loro modelli sull’incidenza delle sindromi simil-influenzali nelle future quattro settimane. In particolare, Influcast considera il numero di casi riportati dalla rete di medici sentinella presenti sul territorio italiano come variabile target per le previsioni. Questo dato viene comunicato ogni venerdì dall’Istituto Superiore di Sanità (ISS) tramite il bollettino RespiVirNet. Il dato di incidenza pubblicato da ISS è relativo alla settimana precedente, mentre l’aggiornamento della piattaforma Influcast avviene il martedì successivo all’aggiornamento, consentendo ai team di disporre di un intervallo di tempo per elaborare il nuovo dato e calibrare i modelli. Di conseguenza, le previsioni pubblicate il martedì su Influcast si riferiscono alla settimana precedente (per cui non esiste ancora un dato consolidato pubblico), alla settimana in corso e alle due successive.
 
 Le previsioni dei singoli modelli vengono visualizzate insieme ai dati storici, consentendo di cogliere la prospettiva di ciascun modello sull'evoluzione dell'incidenza delle sindromi simil-influenzali nel breve termine in Italia e nelle sue regioni. Infine, le previsioni di ciascun modello vengono combinate in modo da produrre una predizione di ensemble.
 
+**Nota**: a partire dalla stagione 2024/25, Influcast supporta anche nuovi target di previsione che combinano incidenza ILI con informazioni provenienti dalla sorveglianza virologica dei virus respiratori, in modo da ottenere un segnale di incidenza maggiormente specifico per l'Influenza. Maggiori dettagli sui target di previsione e sulla metodologia associata [qui](https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/wiki/Target-di-previsione-e-dati-di-sorveglianza).
+
 ### Sorgenti dati
-Influcast utilizza i dati elaborati e resi disponibili in formato machine readable all'interno di questa repository: https://github.com/fbranda/influnet
+Influcast utilizza i dati elaborati e resi disponibili dall'Istituto Superiore di Sanità tramite il Sistema di Sorveglianza Integrata [RespiVirNet](https://www.epicentro.iss.it/influenza/respivirnet).
 
 Tutti i dati delle previsioni inviati dai team aderenti sono soggetti alla licenza Creative Commons __CC BY-NC 4.0__ (Attribuzione - Non commerciale): https://creativecommons.org/licenses/by-nc/4.0/deed.it
