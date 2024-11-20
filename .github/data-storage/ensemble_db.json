@@ -5,6 +5,12 @@
             "changes": [
                 "previsioni/Influcast-quantileBaseline/2024_45.csv"
             ]
+        },
+        {
+            "model": "Ensemble",
+            "changes": [
+                "previsioni/Influcast-Ensemble/2024_45.csv"
+            ]
         }
     ]
 }
