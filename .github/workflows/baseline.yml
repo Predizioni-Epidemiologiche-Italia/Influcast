@@ -51,7 +51,7 @@ jobs:
     - name: Pyhton
       id: compute_baseline
       run: |
-        python ./tools/code/quantile_baseline.py --season "2023-2024"
+        python ./tools/code/quantile_baseline.py --season "2024-2025" --targets "ILI"
 
     - name: Commit data repo changes
       uses: EndBug/add-and-commit@v7
