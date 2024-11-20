@@ -1,1 +1,10 @@
-{}
+{
+    "Influcast": [
+        {
+            "model": "quantileBaseline",
+            "changes": [
+                "previsioni/Influcast-quantileBaseline/2024_45.csv"
+            ]
+        }
+    ]
+}
