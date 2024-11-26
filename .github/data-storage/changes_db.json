@@ -17,6 +17,12 @@
             "changes": [
                 "previsioni/ISI-GLEAM/2024_46.csv"
             ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2024_46.csv"
+            ]
         }
     ],
     "comunipd": [
