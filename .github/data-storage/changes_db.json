@@ -11,6 +11,12 @@
             "changes": [
                 "previsioni/ISI-FluBcast/2024_46.csv"
             ]
+        },
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2024_46.csv"
+            ]
         }
     ],
     "comunipd": [
