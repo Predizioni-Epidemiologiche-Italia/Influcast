@@ -4,8 +4,7 @@ on:
 
   workflow_dispatch:
 
-  # scheduled run every Wednesday at 03.15 a.m. (Wednesday 02.15 a.m. UTC)
-  # TODO for the time being upload is Thursday at 03.15 a.m. (Thursday 02.15 a.m. UTC)
+  # scheduled run every Friday at 14.00 p.m. (Friday 13.00 p.m. UTC)
   schedule:
     - cron: '00 13 * * 5'
 
