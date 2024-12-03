@@ -5,6 +5,20 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2024_47.csv"
             ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2024_47.csv"
+            ]
+        }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2024_47.csv"
+            ]
         }
     ]
 }
