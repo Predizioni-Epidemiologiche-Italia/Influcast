@@ -5,6 +5,12 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2024_49.csv"
             ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2024_49.csv"
+            ]
         }
     ],
     "FBK_HE": [
