@@ -3,27 +3,7 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2024_48.csv"
-            ]
-        }
-    ],
-    "EpiQMUL": [
-        {
-            "model": "ARIMA_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-ARIMA_QMUL/2024_48.csv"
-            ]
-        },
-        {
-            "model": "SEIR_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-SEIR_QMUL/2024_48.csv"
-            ]
-        },
-        {
-            "model": "SEIRaugment_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-SEIRaugment_QMUL/2024_48.csv"
+                "previsioni/ISI-FluABCaster/2024_49.csv"
             ]
         }
     ]
