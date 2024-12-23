@@ -1,17 +1,1 @@
-{
-    "season": "2023-2024",
-    "targets": [
-        {
-            "name": "ILI+_FLU_A",
-            "changes": [
-                "sorveglianza/ILI+_FLU/2023-2024/italia-2024_17-ILI+_FLU_A.csv"
-            ]
-        },
-        {
-            "name": "ILI+_FLU_B",
-            "changes": [
-                "sorveglianza/ILI+_FLU/2023-2024/italia-2024_17-ILI+_FLU_B.csv"
-            ]
-        }
-    ]
-}
+{}
