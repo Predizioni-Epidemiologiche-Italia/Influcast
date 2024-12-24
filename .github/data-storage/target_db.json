@@ -4,39 +4,39 @@
         {
             "name": "ILI+_FLU_A",
             "changes": [
-                "sorveglianza/ILI+_FLU/2024-2025/italia-2024_49-ILI+_FLU_A.csv"
+                "sorveglianza/ILI+_FLU/2024-2025/italia-2024_50-ILI+_FLU_A.csv"
             ]
         },
         {
             "name": "ILI+_FLU_B",
             "changes": [
-                "sorveglianza/ILI+_FLU/2024-2025/italia-2024_49-ILI+_FLU_B.csv"
+                "sorveglianza/ILI+_FLU/2024-2025/italia-2024_50-ILI+_FLU_B.csv"
             ]
         },
         {
             "name": "ILI",
             "changes": [
-                "sorveglianza/ILI/2024-2025/abruzzo-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/basilicata-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/campania-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/emilia_romagna-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/friuli_venezia_giulia-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/italia-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/lazio-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/liguria-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/lombardia-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/marche-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/molise-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/pa_bolzano-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/pa_trento-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/piemonte-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/puglia-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/sardegna-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/sicilia-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/toscana-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/umbria-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/valle_d_aosta-2024_49-ILI.csv",
-                "sorveglianza/ILI/2024-2025/veneto-2024_49-ILI.csv"
+                "sorveglianza/ILI/2024-2025/abruzzo-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/basilicata-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/campania-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/emilia_romagna-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/friuli_venezia_giulia-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/italia-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/lazio-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/liguria-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/lombardia-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/marche-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/molise-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/pa_bolzano-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/pa_trento-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/piemonte-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/puglia-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/sardegna-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/sicilia-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/toscana-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/umbria-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/valle_d_aosta-2024_50-ILI.csv",
+                "sorveglianza/ILI/2024-2025/veneto-2024_50-ILI.csv"
             ]
         }
     ]

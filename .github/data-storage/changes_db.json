@@ -3,7 +3,13 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2024_49.csv"
+                "previsioni/ISI-FluABCaster/2024_50.csv"
+            ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2024_50.csv"
             ]
         }
     ],
@@ -11,7 +17,15 @@
         {
             "model": "REST_HE",
             "changes": [
-                "previsioni/FBK_HE-REST_HE/2024_49.csv"
+                "previsioni/FBK_HE-REST_HE/2024_50.csv"
+            ]
+        }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2024_50.csv"
             ]
         }
     ]
