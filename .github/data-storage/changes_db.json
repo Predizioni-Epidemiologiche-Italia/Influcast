@@ -3,19 +3,13 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2024_49.csv"
+                "previsioni/ISI-FluABCaster/2024_50.csv"
             ]
         },
         {
             "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluBcast/2024_49.csv"
-            ]
-        },
-        {
-            "model": "IPSICast",
-            "changes": [
-                "previsioni/ISI-IPSICast/2024_49.csv"
+                "previsioni/ISI-FluBcast/2024_50.csv"
             ]
         }
     ],
@@ -23,27 +17,7 @@
         {
             "model": "REST_HE",
             "changes": [
-                "previsioni/FBK_HE-REST_HE/2024_49.csv"
-            ]
-        }
-    ],
-    "EpiQMUL": [
-        {
-            "model": "ARIMA_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-ARIMA_QMUL/2024_49.csv"
-            ]
-        },
-        {
-            "model": "SEIR_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-SEIR_QMUL/2024_49.csv"
-            ]
-        },
-        {
-            "model": "SEIRaugment_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-SEIRaugment_QMUL/2024_49.csv"
+                "previsioni/FBK_HE-REST_HE/2024_50.csv"
             ]
         }
     ],
@@ -51,15 +25,27 @@
         {
             "model": "mobnetSI2R",
             "changes": [
-                "previsioni/comunipd-mobnetSI2R/2024_49.csv"
+                "previsioni/comunipd-mobnetSI2R/2024_50.csv"
             ]
         }
     ],
-    "UNIPD_NEIDE": [
+    "EpiQMUL": [
         {
-            "model": "SEEIIRS_MCMC",
+            "model": "ARIMA_QMUL",
             "changes": [
-                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2024_49.csv"
+                "previsioni/EpiQMUL-ARIMA_QMUL/2024_50.csv"
+            ]
+        },
+        {
+            "model": "SEIR_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIR_QMUL/2024_50.csv"
+            ]
+        },
+        {
+            "model": "SEIRaugment_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIRaugment_QMUL/2024_50.csv"
             ]
         }
     ]
