@@ -26,5 +26,13 @@
                 "previsioni/EpiQMUL-SEIRaugment_QMUL/2024_51.csv"
             ]
         }
+    ],
+    "ISI": [
+        {
+            "model": "FluABCaster",
+            "changes": [
+                "previsioni/ISI-FluABCaster/2024_51.csv"
+            ]
+        }
     ]
 }
