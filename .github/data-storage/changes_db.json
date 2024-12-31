@@ -6,5 +6,25 @@
                 "previsioni/comunipd-mobnetSI2R/2024_51.csv"
             ]
         }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "ARIMA_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-ARIMA_QMUL/2024_51.csv"
+            ]
+        },
+        {
+            "model": "SEIR_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIR_QMUL/2024_51.csv"
+            ]
+        },
+        {
+            "model": "SEIRaugment_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIRaugment_QMUL/2024_51.csv"
+            ]
+        }
     ]
 }
