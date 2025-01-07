@@ -54,5 +54,13 @@
                 "previsioni/ev_and_modelers-DeepRE/2024_52.csv"
             ]
         }
+    ],
+    "UNIPD_NEIDE": [
+        {
+            "model": "SEEIIRS_MCMC",
+            "changes": [
+                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2024_52.csv"
+            ]
+        }
     ]
 }
