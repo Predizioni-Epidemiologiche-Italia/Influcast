@@ -3,29 +3,19 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2024_50.csv"
+                "previsioni/ISI-FluABCaster/2024_52.csv"
             ]
         },
         {
             "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluBcast/2024_50.csv"
+                "previsioni/ISI-FluBcast/2024_52.csv"
             ]
-        }
-    ],
-    "FBK_HE": [
+        },
         {
-            "model": "REST_HE",
+            "model": "IPSICast",
             "changes": [
-                "previsioni/FBK_HE-REST_HE/2024_50.csv"
-            ]
-        }
-    ],
-    "comunipd": [
-        {
-            "model": "mobnetSI2R",
-            "changes": [
-                "previsioni/comunipd-mobnetSI2R/2024_50.csv"
+                "previsioni/ISI-IPSICast/2024_52.csv"
             ]
         }
     ],
@@ -33,19 +23,27 @@
         {
             "model": "ARIMA_QMUL",
             "changes": [
-                "previsioni/EpiQMUL-ARIMA_QMUL/2024_50.csv"
+                "previsioni/EpiQMUL-ARIMA_QMUL/2024_52.csv"
             ]
         },
         {
             "model": "SEIR_QMUL",
             "changes": [
-                "previsioni/EpiQMUL-SEIR_QMUL/2024_50.csv"
+                "previsioni/EpiQMUL-SEIR_QMUL/2024_52.csv"
             ]
         },
         {
             "model": "SEIRaugment_QMUL",
             "changes": [
-                "previsioni/EpiQMUL-SEIRaugment_QMUL/2024_50.csv"
+                "previsioni/EpiQMUL-SEIRaugment_QMUL/2024_52.csv"
+            ]
+        }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2024_52.csv"
             ]
         }
     ]
