@@ -18,5 +18,25 @@
                 "previsioni/ISI-IPSICast/2024_52.csv"
             ]
         }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "ARIMA_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-ARIMA_QMUL/2024_52.csv"
+            ]
+        },
+        {
+            "model": "SEIR_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIR_QMUL/2024_52.csv"
+            ]
+        },
+        {
+            "model": "SEIRaugment_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIRaugment_QMUL/2024_52.csv"
+            ]
+        }
     ]
 }
