@@ -13,6 +13,12 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2025_01.csv"
             ]
+        },
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2025_01.csv"
+            ]
         }
     ],
     "FBK_HE": [
