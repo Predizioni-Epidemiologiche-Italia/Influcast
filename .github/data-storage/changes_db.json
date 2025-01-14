@@ -19,6 +19,18 @@
             "changes": [
                 "previsioni/ISI-GLEAM/2025_01.csv"
             ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2025_01.csv"
+            ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2025_01.csv"
+            ]
         }
     ],
     "FBK_HE": [
