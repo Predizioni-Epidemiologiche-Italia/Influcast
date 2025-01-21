@@ -11,6 +11,18 @@
             "changes": [
                 "previsioni/ISI-GLEAM/2025_02.csv"
             ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2025_02.csv"
+            ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2025_02.csv"
+            ]
         }
     ],
     "EpiQMUL": [
