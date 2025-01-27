@@ -3,7 +3,15 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2025_02.csv"
+                "previsioni/ISI-FluABCaster/2025_03.csv"
+            ]
+        }
+    ],
+    "UNIPD_NEIDE": [
+        {
+            "model": "SEEIIRS_MCMC",
+            "changes": [
+                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2025_03.csv"
             ]
         }
     ]
