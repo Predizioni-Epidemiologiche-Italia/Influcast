@@ -26,5 +26,13 @@
                 "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2025_04.csv"
             ]
         }
+    ],
+    "FBK_HE": [
+        {
+            "model": "REST_HE",
+            "changes": [
+                "previsioni/FBK_HE-REST_HE/2025_04.csv"
+            ]
+        }
     ]
 }
