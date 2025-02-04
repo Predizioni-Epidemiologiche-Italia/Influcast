@@ -3,7 +3,19 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2025_03.csv"
+                "previsioni/ISI-FluABCaster/2025_04.csv"
+            ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2025_04.csv"
+            ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2025_04.csv"
             ]
         }
     ],
@@ -11,7 +23,15 @@
         {
             "model": "SEEIIRS_MCMC",
             "changes": [
-                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2025_03.csv"
+                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2025_04.csv"
+            ]
+        }
+    ],
+    "FBK_HE": [
+        {
+            "model": "REST_HE",
+            "changes": [
+                "previsioni/FBK_HE-REST_HE/2025_04.csv"
             ]
         }
     ]
