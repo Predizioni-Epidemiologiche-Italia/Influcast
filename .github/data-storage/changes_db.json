@@ -12,5 +12,13 @@
                 "previsioni/ISI-FluBcast/2025_06.csv"
             ]
         }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2025_06.csv"
+            ]
+        }
     ]
 }
