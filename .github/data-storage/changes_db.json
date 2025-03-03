@@ -20,13 +20,5 @@
                 "previsioni/CSL_PoliTo-metaFlu/2025_08.csv"
             ]
         }
-    ],
-    "TestTeam": [
-        {
-            "model": "TestModel",
-            "changes": [
-                "previsioni/TestTeam-TestModel/2025_08.csv"
-            ]
-        }
     ]
 }
