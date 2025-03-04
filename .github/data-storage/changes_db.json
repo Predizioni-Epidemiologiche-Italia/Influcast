@@ -1,35 +1,23 @@
 {
     "ISI": [
         {
-            "model": "FluABCaster",
+            "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluABCaster/2025_07.csv"
+                "previsioni/ISI-FluBcast/2025_08.csv"
             ]
         },
         {
-            "model": "FluBcast",
+            "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluBcast/2025_07.csv"
+                "previsioni/ISI-FluABCaster/2025_08.csv"
             ]
         }
     ],
-    "EpiQMUL": [
+    "CSL_PoliTo": [
         {
-            "model": "ARIMA_QMUL",
+            "model": "metaFlu",
             "changes": [
-                "previsioni/EpiQMUL-ARIMA_QMUL/2025_07.csv"
-            ]
-        },
-        {
-            "model": "SEIR_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-SEIR_QMUL/2025_07.csv"
-            ]
-        },
-        {
-            "model": "SEIRaugment_QMUL",
-            "changes": [
-                "previsioni/EpiQMUL-SEIRaugment_QMUL/2025_07.csv"
+                "previsioni/CSL_PoliTo-metaFlu/2025_08.csv"
             ]
         }
     ]
