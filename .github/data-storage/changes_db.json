@@ -60,5 +60,13 @@
                 "previsioni/EpiQMUL-SEIRaugment_QMUL/2025_08.csv"
             ]
         }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2025_08.csv"
+            ]
+        }
     ]
 }
