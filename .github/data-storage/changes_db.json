@@ -11,6 +11,12 @@
             "changes": [
                 "previsioni/ISI-FluBcast/2025_09.csv"
             ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2025_09.csv"
+            ]
         }
     ],
     "CSL_PoliTo": [
