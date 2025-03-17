@@ -13,6 +13,12 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2025_10.csv"
             ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2025_10.csv"
+            ]
         }
     ]
 }
