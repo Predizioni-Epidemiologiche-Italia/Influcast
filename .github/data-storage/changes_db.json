@@ -13,6 +13,20 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2025_10.csv"
             ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2025_10.csv"
+            ]
+        }
+    ],
+    "FBK_HE": [
+        {
+            "model": "REST_HE",
+            "changes": [
+                "previsioni/FBK_HE-REST_HE/2025_10.csv"
+            ]
         }
     ]
 }
