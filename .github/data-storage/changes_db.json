@@ -19,6 +19,12 @@
             "changes": [
                 "previsioni/ISI-FluBcast/2025_10.csv"
             ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2025_10.csv"
+            ]
         }
     ],
     "FBK_HE": [
