@@ -1,31 +1,29 @@
 {
+    "CSL_PoliTo": [
+        {
+            "model": "metaFlu",
+            "changes": [
+                "previsioni/CSL_PoliTo-metaFlu/2025_10.csv"
+            ]
+        }
+    ],
     "ISI": [
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2025_09.csv"
+                "previsioni/ISI-FluABCaster/2025_10.csv"
             ]
         },
         {
             "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluBcast/2025_09.csv"
+                "previsioni/ISI-FluBcast/2025_10.csv"
             ]
-        }
-    ],
-    "CSL_PoliTo": [
+        },
         {
-            "model": "metaFlu",
+            "model": "IPSICast",
             "changes": [
-                "previsioni/CSL_PoliTo-metaFlu/2025_09.csv"
-            ]
-        }
-    ],
-    "comunipd": [
-        {
-            "model": "mobnetSI2R",
-            "changes": [
-                "previsioni/comunipd-mobnetSI2R/2025_09.csv"
+                "previsioni/ISI-IPSICast/2025_10.csv"
             ]
         }
     ],
@@ -33,7 +31,7 @@
         {
             "model": "REST_HE",
             "changes": [
-                "previsioni/FBK_HE-REST_HE/2025_09.csv"
+                "previsioni/FBK_HE-REST_HE/2025_10.csv"
             ]
         }
     ]
