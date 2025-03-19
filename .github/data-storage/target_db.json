@@ -4,15 +4,13 @@
         {
             "name": "ILI+_FLU_A",
             "changes": [
-                "sorveglianza/ILI+_FLU/2024-2025/italia-2025_10-ILI+_FLU_A.csv",
-                "sorveglianza/ILI+_FLU/2024-2025/latest/italia-2025_10-ILI+_FLU_A.csv"
+                "sorveglianza/ILI+_FLU/2024-2025/italia-2025_10-ILI+_FLU_A.csv"
             ]
         },
         {
             "name": "ILI+_FLU_B",
             "changes": [
-                "sorveglianza/ILI+_FLU/2024-2025/italia-2025_10-ILI+_FLU_B.csv",
-                "sorveglianza/ILI+_FLU/2024-2025/latest/italia-2025_10-ILI+_FLU_B.csv"
+                "sorveglianza/ILI+_FLU/2024-2025/italia-2025_10-ILI+_FLU_B.csv"
             ]
         },
         {
