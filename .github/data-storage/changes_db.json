@@ -48,5 +48,13 @@
                 "previsioni/CSL_PoliTo-metaFlu/2025_11.csv"
             ]
         }
+    ],
+    "UNIPD_NEIDE": [
+        {
+            "model": "SEEIIRS_MCMC",
+            "changes": [
+                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2025_11.csv"
+            ]
+        }
     ]
 }
