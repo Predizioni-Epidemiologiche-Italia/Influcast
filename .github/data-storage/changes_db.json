@@ -22,5 +22,13 @@
                 "previsioni/FBK_HE-REST_HE/2025_12.csv"
             ]
         }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2025_12.csv"
+            ]
+        }
     ]
 }
