@@ -3,13 +3,23 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2025_11.csv"
+                "previsioni/ISI-FluABCaster/2025_12.csv"
             ]
-        },
+        }
+    ],
+    "CSL_PoliTo": [
         {
-            "model": "FluBcast",
+            "model": "metaFlu",
             "changes": [
-                "previsioni/ISI-FluBcast/2025_11.csv"
+                "previsioni/CSL_PoliTo-metaFlu/2025_12.csv"
+            ]
+        }
+    ],
+    "FBK_HE": [
+        {
+            "model": "REST_HE",
+            "changes": [
+                "previsioni/FBK_HE-REST_HE/2025_12.csv"
             ]
         }
     ]
