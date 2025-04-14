@@ -47,7 +47,7 @@ jobs:
       # --------------------------------      
       - name: Get changes
         id: get_changed_files
-        uses: tj-actions/changed-files@v41
+        uses: tj-actions/changed-files@v46
         
       # Run Pyton code
       # -------------------------
