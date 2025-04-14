@@ -44,7 +44,7 @@ jobs:
           # --------------------------------      
           - name: Get changes
             id: get_changed_files
-            uses: tj-actions/changed-files@v36
+            uses: tj-actions/changed-files@v46
             
           # Authenticate the pull_request 
           # returns as output authentication = { True / False }
