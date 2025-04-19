@@ -6,5 +6,13 @@
                 "previsioni/ISI-FluABCaster/2025_15.csv"
             ]
         }
+    ],
+    "CSL_PoliTo": [
+        {
+            "model": "metaFlu",
+            "changes": [
+                "previsioni/CSL_PoliTo-metaFlu/2025_15.csv"
+            ]
+        }
     ]
 }
