@@ -17,6 +17,12 @@
             "changes": [
                 "previsioni/ISI-GLEAM/2025_15.csv"
             ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2025_15.csv"
+            ]
         }
     ],
     "CSL_PoliTo": [
