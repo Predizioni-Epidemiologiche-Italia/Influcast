@@ -44,7 +44,7 @@ jobs:
       with:
         python-version: '3.10' 
     
-    - run: pip install pandas==1.2.5 isoweek==1.3.3
+    - run: pip install pandas isoweek==1.3.3
     
     - name: Pyhton
       id: compute_ensemble
@@ -67,7 +67,7 @@ jobs:
         echo "{ \"pr-changes\" : \"previsioni/Influcast-Ensemble/$changed_files\" }" > pr_changes.json
           
     - name: Upload changes
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: pr_changes
         path: ./pr_changes.json

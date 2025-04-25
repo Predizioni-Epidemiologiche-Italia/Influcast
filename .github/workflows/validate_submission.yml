@@ -47,7 +47,7 @@ jobs:
       # --------------------------------      
       - name: Get changes
         id: get_changed_files
-        uses: tj-actions/changed-files@v41
+        uses: tj-actions/changed-files@v46
         
       # Run Pyton code
       # -------------------------
@@ -66,7 +66,7 @@ jobs:
           calling_actor: ${{ github.actor }}
           changed_files: ${{ steps.get_changed_files.outputs.all_changed_files }}
           
-        run: python ./tools/.github/scripts/request_authentication/authenticate_request.py
+        run: python ./tools/.github/scripts/request_authentication/request_authenticate.py
 
         
       # If authenticated proceed with validation
@@ -145,7 +145,7 @@ jobs:
           echo "{ \"pr-changes\" : \"$changed_files\" }" > pr_changes.json
         
       - name: Upload changes
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: pr_changes
           path: ./pr_changes.json

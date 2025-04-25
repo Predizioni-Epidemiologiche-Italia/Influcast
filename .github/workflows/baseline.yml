@@ -46,12 +46,12 @@ jobs:
       with:
         python-version: '3.10' 
     
-    - run: pip install pandas==1.2.5 numpy==1.22.4 isoweek==1.3.3
+    - run: pip install pandas numpy==1.22.4 isoweek==1.3.3
     
     - name: Pyhton
       id: compute_baseline
       run: |
-        python ./tools/code/quantile_baseline.py --season "2023-2024"
+        python ./tools/code/quantile_baseline.py --season "2024-2025"
 
     - name: Commit data repo changes
       uses: EndBug/add-and-commit@v7
@@ -69,7 +69,7 @@ jobs:
         echo "{ \"pr-changes\" : \"previsioni/Influcast-quantileBaseline/$changed_files\" }" > pr_changes.json
           
     - name: Upload changes
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: pr_changes
         path: ./pr_changes.json

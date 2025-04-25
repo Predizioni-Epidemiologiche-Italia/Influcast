@@ -17,7 +17,7 @@ jobs:
     steps:
 
     - name: Download workflow artifact
-      uses: dawidd6/action-download-artifact@v2.11.0
+      uses: dawidd6/action-download-artifact@v6
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         workflow: validate-submission.yml
@@ -67,7 +67,7 @@ jobs:
         python ./tools/code/store_changes.py
 
     - name: Commit changes
-      uses: EndBug/add-and-commit@v7
+      uses: EndBug/add-and-commit@v9
       with: 
           cwd: './repo'
           message: "Update data storage"
