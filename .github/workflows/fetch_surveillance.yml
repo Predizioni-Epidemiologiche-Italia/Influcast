@@ -18,11 +18,27 @@ jobs:
   fetch-and-pr:
     runs-on: ubuntu-latest
     steps:
+      # Checkout the Influcast repo
+      # used to authenticate and validate the PR
+      # -------------------------------------------            
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.ref }}
+
+
+      # Checkout the python tools repo
+      # used to authenticate and validate the PR
+      # -------------------------------------------      
+      - name: checkout python tools repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: 'Predizioni-Epidemiologiche-Italia/hub-tools'
+          ref: 'main'
+          path: './tools'
+
 
       - name: Set up Python
         uses: actions/setup-python@v5
