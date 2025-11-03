@@ -69,6 +69,24 @@ jobs:
         run: |
           python tools/code/parset_respivirnet.py
 
+
+      - name: List surveillance folders (recursive)
+        run: |
+            set -euo pipefail
+            for d in ./sorveglianza/ARI/2025-2026 ./sorveglianza/ARI+_FLU/2025-2026; do
+              echo "::group::Listing $d"
+              if [ -d "$d" ]; then
+                echo "# ls -laR"
+                ls -laR "$d"
+                echo
+                echo "# files (path | size KB | mtime)"
+                find "$d" -type f -printf "%p\t%k KB\t%TY-%Tm-%Td %TH:%TM\n" | sort
+              else
+                echo "Directory not found: $d"
+              fi
+              echo "::endgroup::"
+            done
+
     #   - name: Run fetch wrapper
     #     env:
     #       TZ: Europe/Rome
