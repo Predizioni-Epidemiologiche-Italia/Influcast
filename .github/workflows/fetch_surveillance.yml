@@ -106,8 +106,8 @@ jobs:
             - Timezone: Europe/Rome
             - If files already existed, no changes were committed.
           add-paths: |
-            Influcast/sorveglianza/ARI/**
-            Influcast/sorveglianza/ARI+_FLU/**
+            ./sorveglianza/ARI/**
+            ./sorveglianza/ARI+_FLU/**
           labels: |
             automation
             surveillance
