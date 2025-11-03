@@ -1,0 +1,69 @@
+name: FetchSurveillance
+
+on:
+#   schedule:
+    # Ogni martedì alle 08:30 UTC (~09:30 Roma in inverno)
+    # - cron: "30 8 * * 2"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: fetch-surveillance
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas numpy==1.22.4 isoweek==1.3.3
+      # (Opzionale) Se il tuo parset richiede dipendenze, installale qui.
+
+        #   pip install -r requirements.txt
+
+
+      - name: |
+        run: |
+          python tools/code/parset_respivirnet.py
+
+    #   - name: Run fetch wrapper
+    #     env:
+    #       TZ: Europe/Rome
+    #     run: |
+    #       python tools/fetch_surveillance.py
+
+      - name: Create PR with changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "surveillance: add weekly ISS data (auto)"
+          branch: "bot/iss-${{ date | toJSON }}"   # nome unico; in alternativa usa ISO week
+          title: "Surveillance: weekly ISS data"
+          body: |
+            Automated PR adding weekly surveillance data (ARI, ARI+_FLU).
+            - Timezone: Europe/Rome
+            - If files already existed, no changes were committed.
+          add-paths: |
+            Influcast/sorveglianza/ARI/**
+            Influcast/sorveglianza/ARI+_FLU/**
+          labels: |
+            automation
+            surveillance
+          draft: false
+          signoff: false
