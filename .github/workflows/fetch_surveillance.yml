@@ -47,8 +47,19 @@ jobs:
 
       - name: Install deps
         run: |
-          python -m pip install --upgrade pip
-          pip install requests pandas beautifulsoup4 numpy isoweek
+          # python -m pip install --upgrade pip
+          # pip install  pandas beautifulsoup4 numpy isoweek
+          
+          python -m pip install -U pip wheel setuptools
+          # co-installo numpy+pandas (compatibili) e i parser HTML
+          pip install --only-binary=:all: "numpy>=2,<3" "pandas>=2.2,<3"
+          pip install requests lxml html5lib beautifulsoup4
+          python - <<'PY'
+          import numpy, pandas, lxml, bs4, html5lib
+          print("numpy", numpy.__version__)
+          print("pandas", pandas.__version__)
+          print("lxml OK, bs4 OK, html5lib OK")
+          PY
       
       # TODO  Install dependencies from text file
         #   pip install -r requirements.txt
