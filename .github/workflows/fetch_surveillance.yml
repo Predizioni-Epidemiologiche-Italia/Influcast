@@ -48,7 +48,7 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install requests pandas numpy==1.22.4 isoweek==1.3.3
+          pip install requests pandas beautifulsoup4 numpy==1.22.4 isoweek==1.3.3
       
       # TODO  Install dependencies from text file
         #   pip install -r requirements.txt
