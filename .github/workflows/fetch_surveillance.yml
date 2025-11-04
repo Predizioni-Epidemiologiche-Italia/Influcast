@@ -98,9 +98,8 @@ jobs:
         with:
           token: ${{ secrets.ACTIONS_BOT_PAT }}   # <— PAT, non GITHUB_TOKEN. Generated on base of INFLUCAST_GH_PAT from M-7th
           push-to-fork: M-7th/Influcast-Fork
-          commit-message: "surveillance: add weekly ISS data (auto)"
-          # branch: "bot/iss-${{ date | toJSON }}"   # nome unico; in alternativa usa ISO week
-          branch: "bot/iss-test-001"
+          commit-message: "surveillance: add weekly ISS data (auto)" 
+          branch: "bot/iss-${{ github.run_id }}" # nome unico; in alternativa usa ISO week
           base: "main"
           title: "Surveillance: weekly ISS data"
           body: |
