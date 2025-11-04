@@ -101,6 +101,7 @@ jobs:
           commit-message: "surveillance: add weekly ISS data (auto)"
           # branch: "bot/iss-${{ date | toJSON }}"   # nome unico; in alternativa usa ISO week
           branch: "bot/iss-test-001"
+          base: "main"
           title: "Surveillance: weekly ISS data"
           body: |
             Automated PR adding weekly surveillance data (ARI, ARI+_FLU).
