@@ -60,7 +60,7 @@ jobs:
           webhook_secret: ${{ secrets.WEB_HOOK_SECRET }}
           data: ${{ steps.get_changes.outputs.packageJson }}
           data_type: "surveillance"
-          season: "2024-2025"
+          season: "2025-2026"
           
         run: |
           pip install requests
