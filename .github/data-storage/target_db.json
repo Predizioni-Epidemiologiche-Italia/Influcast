@@ -1,12 +1,1 @@
-{
-    "season": "2025-2026",
-    "targets": [
-        {
-            "name": "ARI",
-            "changes": [
-                "sorveglianza/ARI/2025-2026/abruzzo-2025_44-ARI.csv",
-                "sorveglianza/ARI/2025-2026/basilicata-2025_44-ARI.csv"
-            ]
-        }
-    ]
-}
+{}
