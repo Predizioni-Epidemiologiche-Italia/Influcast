@@ -1,17 +1,9 @@
 {
-    "CSL_PoliTo": [
-        {
-            "model": "metaFlu",
-            "changes": [
-                "previsioni/CSL_PoliTo-metaFlu/2025_16.csv"
-            ]
-        }
-    ],
     "ISI": [
         {
-            "model": "GLEAM",
+            "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-GLEAM/2025_16.csv"
+                "previsioni/ISI-FluABCaster/2025_45.csv"
             ]
         }
     ]
