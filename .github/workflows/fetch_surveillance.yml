@@ -67,7 +67,7 @@ jobs:
 
       - name: |
         run: |
-          python tools/code/parset_respivirnet.py
+          python tools/code/parser_respivirnet.py
 
 
       - name: List surveillance folders (recursive)
