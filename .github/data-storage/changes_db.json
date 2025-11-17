@@ -20,5 +20,13 @@
                 "previsioni/comunipd-mobnetSI2R/2025_45.csv"
             ]
         }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "EpiQMUL_tabpfnts",
+            "changes": [
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2025_45.csv"
+            ]
+        }
     ]
 }
