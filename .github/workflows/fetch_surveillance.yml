@@ -1,0 +1,116 @@
+name: FetchSurveillance
+
+on:
+#   schedule:
+    # Ogni martedì alle 08:30 UTC (~09:30 Roma in inverno)
+    # - cron: "30 8 * * 2"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: fetch-surveillance
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the Influcast repo
+      # used to authenticate and validate the PR
+      # -------------------------------------------            
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.ref }}
+
+
+      # Checkout the python tools repo
+      # used to authenticate and validate the PR
+      # -------------------------------------------      
+      - name: checkout python tools repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: 'Predizioni-Epidemiologiche-Italia/hub-tools'
+          ref: 'main'
+          path: './tools'
+
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          # python -m pip install --upgrade pip
+          # pip install  pandas beautifulsoup4 numpy isoweek
+          
+          python -m pip install -U pip wheel setuptools
+          # co-installo numpy+pandas (compatibili) e i parser HTML
+          pip install --only-binary=:all: "numpy>=2,<3" "pandas>=2.2,<3"
+          pip install requests lxml html5lib beautifulsoup4
+          python - <<'PY'
+          import numpy, pandas, lxml, bs4, html5lib
+          print("numpy", numpy.__version__)
+          print("pandas", pandas.__version__)
+          print("lxml OK, bs4 OK, html5lib OK")
+          PY
+      
+      # TODO  Install dependencies from text file
+        #   pip install -r requirements.txt
+
+
+      - name: |
+        run: |
+          python tools/code/parser_respivirnet.py
+
+
+      - name: List surveillance folders (recursive)
+        run: |
+            set -euo pipefail
+            for d in ./sorveglianza/ARI/2025-2026 ./sorveglianza/ARI+_FLU/2025-2026; do
+              echo "::group::Listing $d"
+              if [ -d "$d" ]; then
+                echo "# ls -laR"
+                ls -laR "$d"
+                echo
+                echo "# files (path | size KB | mtime)"
+                find "$d" -type f -printf "%p\t%k KB\t%TY-%Tm-%Td %TH:%TM\n" | sort
+              else
+                echo "Directory not found: $d"
+              fi
+              echo "::endgroup::"
+            done
+
+    #   - name: Run fetch wrapper
+    #     env:
+    #       TZ: Europe/Rome
+    #     run: |
+    #       python tools/fetch_surveillance.py
+
+      - name: Create PR with changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.ACTIONS_BOT_PAT }}   # <— PAT, non GITHUB_TOKEN. Generated on base of INFLUCAST_GH_PAT from M-7th
+          push-to-fork: M-7th/Influcast-Fork
+          commit-message: "surveillance: add weekly ISS data (auto)" 
+          branch: "bot/iss-${{ github.run_id }}" # nome unico; in alternativa usa ISO week
+          base: "main"
+          title: "Surveillance: weekly ISS data"
+          body: |
+            Automated PR adding weekly surveillance data (ARI, ARI+_FLU).
+            - Timezone: Europe/Rome
+            - If files already existed, no changes were committed.
+          add-paths: |
+            ./sorveglianza/ARI/**
+            ./sorveglianza/ARI+_FLU/**
+          labels: |
+            automation
+            surveillance
+          draft: false
+          signoff: false

@@ -77,7 +77,8 @@ jobs:
         env:
           changed_files: ${{ steps.get_changed_files.outputs.all_changed_files }}
           
-        run: python ./tools/.github/scripts/forecast_validation/validate.py
+        # run: python ./tools/.github/scripts/forecast_validation/validate.py
+        run: python ./tools/.github/scripts/forecast_validation/extended_validate.py
 
       - name: Trace for Debug
         env:
