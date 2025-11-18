@@ -50,5 +50,13 @@
                 "previsioni/C2S2_Trento-SIR_INN/2025_45.csv"
             ]
         }
+    ],
+    "CSL_PoliTo": [
+        {
+            "model": "metaFlu",
+            "changes": [
+                "previsioni/CSL_PoliTo-metaFlu/2025_45.csv"
+            ]
+        }
     ]
 }
