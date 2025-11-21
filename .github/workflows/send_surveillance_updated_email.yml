@@ -45,7 +45,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "Influcast - Surveillance fetching error!"
-          body: "Hi,\n\nAn error occurred during data import process from epicentro.iss.it. Not sending data updated email to teams!\n\Influcast tech team."
+          body: "Hi,\n\nAn error occurred during data import process from epicentro.iss.it. Not sending data updated email to teams!\n\nInflucast tech team."
           to: paolo.milano@isi.it,corrado.gioannini@isi.it,nicolo.gozzi@isi.it
           from: "Influcast Team <influcast@isi.it>"
           content_type: text/plain
