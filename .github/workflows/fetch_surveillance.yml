@@ -16,6 +16,7 @@ concurrency:
 
 jobs:
   fetch-and-pr:
+    if: github.repository_owner == 'Predizioni-Epidemiologiche-Italia'
     runs-on: ubuntu-latest
     steps:
       # Checkout the Influcast repo
