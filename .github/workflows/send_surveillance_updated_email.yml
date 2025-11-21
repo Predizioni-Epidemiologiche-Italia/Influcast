@@ -44,10 +44,10 @@ jobs:
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "RespiCast-SyndromicIndicators - Target data error!"
-          body: "Hi,\n\nAn error occurred during ERVISS data import process. Not sending data updated email to teams!\n\nRespiCast tech team."
+          subject: "Influcast - Surveillance fetching error!"
+          body: "Hi,\n\nAn error occurred during data import process from epicentro.iss.it. Not sending data updated email to teams!\n\Influcast tech team."
           to: paolo.milano@isi.it,corrado.gioannini@isi.it,nicolo.gozzi@isi.it
-          from: "Respicast Team <respicast@isi.it>"
+          from: "Influcast Team <influcast@isi.it>"
           content_type: text/plain
 
           
@@ -78,7 +78,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          repository: 'european-modelling-hubs/hub-tools'
+          repository: 'Predizioni-Epidemiologiche-Italia/hub-tools'
           ref: 'main'
           path: tools
 
@@ -91,7 +91,7 @@ jobs:
       - name: Extract Mailing List
         id: extract_from_metadata
         run: |
-          python ./tools/code/extract_emails.py --folder_path "model-metadata"  "--exclusions" "respicast-hubEnsemble.yml respicast-quantileBaseline.yml"
+          python ./tools/code/extract_emails.py --mail-list ${{ secrets.mail_list }} # a blank separated list of mail adresses
         
       # Send the email
       - name: Send email to teams
@@ -101,10 +101,10 @@ jobs:
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "RespiCast-SyndromicIndicators Data Update"
+          subject: "Influcast Surveillance Data Update"
           body: ${{ secrets.EMAIL_TEXT }}
           # to: paolo.milano@isi.it,corrado.gioannini@isi.it
-          to: respicast@isi.it
+          to: influcast@isi.it
           bcc: ${{ steps.extract_from_metadata.outputs.email_list }}
-          from: "Respicast Team <respicast@isi.it>"
+          from: "Influcast Team <influcast@isi.it>"
           content_type: text/plain
