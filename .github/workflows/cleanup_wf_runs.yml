@@ -8,6 +8,7 @@ on:
 
 jobs:
   del_runs:
+    if: github.repository_owner == 'Predizioni-Epidemiologiche-Italia'
     runs-on: ubuntu-latest
     permissions:
       actions: write
