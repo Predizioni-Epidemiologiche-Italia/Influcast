@@ -1,9 +1,9 @@
 name: FetchSurveillance
 
 on:
-#   schedule:
-    # Ogni martedì alle 08:30 UTC (~09:30 Roma in inverno)
-    # - cron: "30 8 * * 2"
+  schedule:
+    # Ogni venerdì alle 18:00 UTC (~19:00 Roma in inverno)
+    - cron: "00 18 * * 5"
   workflow_dispatch: {}
 
 permissions:
