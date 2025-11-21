@@ -11,8 +11,8 @@ on:
 
 jobs:
   scheduled-submit:
-  
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.repository_owner == 'european-modelling-hubs' }}    
+    
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.repository_owner == 'Predizioni-Epidemiologiche-Italia' }}    
     runs-on: ubuntu-latest
     
     steps:
