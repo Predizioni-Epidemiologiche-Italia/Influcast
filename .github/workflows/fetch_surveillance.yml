@@ -1,9 +1,9 @@
 name: FetchSurveillance
 
 on:
-#   schedule:
-    # Ogni martedì alle 08:30 UTC (~09:30 Roma in inverno)
-    # - cron: "30 8 * * 2"
+  # schedule:
+  #   # Ogni venerdì alle 18:00 UTC (~19:00 Roma in inverno)
+  #   - cron: "00 18 * * 5"
   workflow_dispatch: {}
 
 permissions:
@@ -16,6 +16,7 @@ concurrency:
 
 jobs:
   fetch-and-pr:
+    if: github.repository_owner == 'Predizioni-Epidemiologiche-Italia'
     runs-on: ubuntu-latest
     steps:
       # Checkout the Influcast repo
@@ -92,6 +93,20 @@ jobs:
     #       TZ: Europe/Rome
     #     run: |
     #       python tools/fetch_surveillance.py
+
+      # - name: Sync fork default branch with upstream
+      #   env:
+      #     GH_TOKEN: ${{ secrets.ACTIONS_BOT_PAT }}   # as fork owner PAT
+      #     REPO_FORK: M-7th/Influcast-Fork
+      #     REPO_UPSTREAM: Predizioni-Epidemiologiche-Italia/Influcast
+      #   run: |      
+      #     # sincronizza il branch del fork con l'upstream
+      #     # (se già allineato, l'endpoint può restituire 204/no content: non è un errore)
+      #     gh api -X POST repos/$REPO_FORK/merge-upstream -f branch="main" || true
+      
+      #     echo "Fork sincronizzato con upstream/$DEFAULT"
+
+
 
       - name: Create PR with changes
         uses: peter-evans/create-pull-request@v6
