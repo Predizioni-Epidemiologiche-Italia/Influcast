@@ -23,10 +23,10 @@ jobs:
       #     python-version: '3.x'
 
          
-      # # Checkout the python tools repo
-      # # -------------------------------------------      
-      # - name: Checkout repository
-      #   uses: actions/checkout@v4
+      # Checkout the python tools repo
+      # -------------------------------------------      
+      - name: Checkout repository
+        uses: actions/checkout@v4
         
 
       # Checkout the python tools repo
