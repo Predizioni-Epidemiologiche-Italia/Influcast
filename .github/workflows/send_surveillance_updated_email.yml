@@ -1,11 +1,11 @@
 name: SendDataUpdatedEmail
 
 on:
-  # workflow_run:
-  #   workflows: [MergeRecents]
+  workflow_run:
+    workflows: [FetchSurveillance]
       
-  #   types:
-  #     - completed  
+    types:
+      - completed  
 
   workflow_dispatch:
 
