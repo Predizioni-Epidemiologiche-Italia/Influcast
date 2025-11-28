@@ -11,87 +11,45 @@ on:
 
 jobs:
   scheduled-submit:
-    
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.repository_owner == 'Predizioni-Epidemiologiche-Italia' }}    
+    if:  github.repository_owner == 'Predizioni-Epidemiologiche-Italia' && (github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'))
     runs-on: ubuntu-latest
     
     steps:
-    
-      - name: Get previous workflow run
-        id: get_previous_run
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const response = await github.rest.actions.listWorkflowRuns({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: 'import_truth.yml',
-              per_page: 1,
-            });
-            const lastRun = response.data.workflow_runs[0];
-            core.setOutput('conclusion', lastRun.conclusion || 'no_run'); 
 
-
-      - name: Debug
-        run: |
-          echo "Previous run result: ${{ steps.get_previous_run.outputs.conclusion }}"
-
-      - name: Send warning email to admin
-        if: ${{ steps.get_previous_run.outputs.conclusion != 'success' }}
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 587
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "Influcast - Surveillance fetching error!"
-          body: "Hi,\n\nAn error occurred during data import process from epicentro.iss.it. Not sending data updated email to teams!\n\nInflucast tech team."
-          to: paolo.milano@isi.it,corrado.gioannini@isi.it,nicolo.gozzi@isi.it
-          from: "Influcast Team <influcast@isi.it>"
-          content_type: text/plain
-
-          
-      - name: Cancel workflow if last run was not successful 
-        if: ${{ steps.get_previous_run.outputs.conclusion != 'success' }}
-        run: |
-          echo "Check run was NOT successful. Not sending emails."
-          exit 1 # Stop workflow run
-
-
-      # Install Python
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.x'
+      # # Install Python
+      # - name: Set up Python
+      #   uses: actions/setup-python@v3
+      #   with:
+      #     python-version: '3.x'
 
          
-      # Checkout the python tools repo
-      # -------------------------------------------      
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      # # Checkout the python tools repo
+      # # -------------------------------------------      
+      # - name: Checkout repository
+      #   uses: actions/checkout@v4
         
 
       # Checkout the python tools repo
       # used to verify the PR changes 
       # ------------------------------------------
-      - name: checkout python tools repo
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: 'Predizioni-Epidemiologiche-Italia/hub-tools'
-          ref: 'main'
-          path: tools
+      # - name: checkout python tools repo
+      #   uses: actions/checkout@v3
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     repository: 'Predizioni-Epidemiologiche-Italia/hub-tools'
+      #     ref: 'main'
+      #     path: tools
 
-      - name: install deps
-        run: |
-          pip install PyYAML
+      # - name: install deps
+      #   run: |
+      #     pip install PyYAML
 
 
-      # Check if some submission is outside allowed folders
-      - name: Extract Mailing List
-        id: extract_from_metadata
-        run: |
-          python ./tools/code/extract_emails.py --mail-list ${{ secrets.mail_list }} # a blank separated list of mail adresses
+      # # Check if some submission is outside allowed folders
+      # - name: Extract Mailing List
+      #   id: extract_from_metadata
+      #   run: |
+      #     python ./tools/code/extract_emails.py --mail-list ${{ secrets.mail_list }} # a blank separated list of mail adresses
         
       # Send the email
       - name: Send email to teams
@@ -103,8 +61,27 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "Influcast Surveillance Data Update"
           body: ${{ secrets.EMAIL_TEXT }}
-          # to: paolo.milano@isi.it,corrado.gioannini@isi.it
           to: influcast@isi.it
-          bcc: ${{ steps.extract_from_metadata.outputs.email_list }}
+          bcc: ${{ secrets.EMAIL_RECIPIENTS_ADMIN }}
+          # bcc: ${{ steps.extract_from_metadata.outputs.email_list }}
           from: "Influcast Team <influcast@isi.it>"
           content_type: text/plain
+
+  scheduled-submit-failure:
+    if:  github.repository_owner == 'Predizioni-Epidemiologiche-Italia' && (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send warning email to admin        
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "Influcast - Surveillance fetching error!"
+          body: "Hi,\n\nAn error occurred during data import process from epicentro.iss.it. Not sending data updated email to teams!\n\nInflucast tech team."
+          to: ${{ secrets.EMAIL_RECIPIENTS_ADMIN }}
+          from: "Influcast Team <influcast@isi.it>"
+          content_type: text/plain
+          
