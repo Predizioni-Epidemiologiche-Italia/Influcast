@@ -60,7 +60,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "Influcast Surveillance Data Update"
-          body: ${{ secrets.EMAIL_TEXT }}
+          body: ${{ vars.EMAIL_TEXT }}
           to: influcast@isi.it
           bcc: ${{ secrets.EMAIL_RECIPIENTS_ADMIN }}
           # bcc: ${{ steps.extract_from_metadata.outputs.email_list }}
