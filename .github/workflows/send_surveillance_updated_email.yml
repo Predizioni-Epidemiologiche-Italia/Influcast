@@ -70,8 +70,7 @@ jobs:
           subject: "Influcast Surveillance Data Update"
           body: ${{ steps.get_body.outputs.body }}
           to: influcast@isi.it
-          bcc: ${{ secrets.EMAIL_RECIPIENTS_ADMIN }}
-          # bcc: ${{ steps.extract_from_metadata.outputs.email_list }}
+          bcc: ${{ secrets.EMAIL_RECIPIENTS }}
           from: "Influcast Team <influcast@isi.it>"
           content_type: text/plain
 
