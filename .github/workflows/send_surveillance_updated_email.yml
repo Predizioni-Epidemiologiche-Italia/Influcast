@@ -50,7 +50,15 @@ jobs:
       #   id: extract_from_metadata
       #   run: |
       #     python ./tools/code/extract_emails.py --mail-list ${{ secrets.mail_list }} # a blank separated list of mail adresses
-        
+
+      - name: Read email body
+        id: get_body
+        run: |
+          BODY=$(cat .github/email_templates/fetch_completed.txt)
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          echo "$BODY" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
       # Send the email
       - name: Send email to teams
         uses: dawidd6/action-send-mail@v3
@@ -60,7 +68,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "Influcast Surveillance Data Update"
-          body: ${{ vars.EMAIL_TEXT }}
+          body: ${{ steps.get_body.outputs.body }}
           to: influcast@isi.it
           bcc: ${{ secrets.EMAIL_RECIPIENTS_ADMIN }}
           # bcc: ${{ steps.extract_from_metadata.outputs.email_list }}
