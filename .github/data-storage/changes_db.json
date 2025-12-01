@@ -12,5 +12,13 @@
                 "previsioni/ISI-FluABCaster/2025_47.csv"
             ]
         }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "EpiQMUL_tabpfnts",
+            "changes": [
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2025_47.csv"
+            ]
+        }
     ]
 }
