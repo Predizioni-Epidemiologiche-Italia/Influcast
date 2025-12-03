@@ -3,7 +3,8 @@
         {
             "model": "Ensemble",
             "changes": [
-                "previsioni/Influcast-Ensemble/2025_46.csv"
+                "previsioni/Influcast-Ensemble/2025_46.csv",
+                "previsioni/Influcast-Ensemble/2025_47.csv"
             ]
         },
         {
