@@ -1,15 +1,27 @@
 {
     "ISI": [
         {
-            "model": "FluBcast",
+            "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluBcast/2025_47.csv"
+                "previsioni/ISI-FluABCaster/2025_48.csv"
             ]
         },
         {
-            "model": "FluABCaster",
+            "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluABCaster/2025_47.csv"
+                "previsioni/ISI-FluBcast/2025_48.csv"
+            ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2025_48.csv"
+            ]
+        },
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2025_48.csv"
             ]
         }
     ],
@@ -17,7 +29,13 @@
         {
             "model": "EpiQMUL_tabpfnts",
             "changes": [
-                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2025_47.csv"
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2025_48.csv"
+            ]
+        },
+        {
+            "model": "ARIMA_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-ARIMA_QMUL/2025_48.csv"
             ]
         }
     ],
@@ -25,7 +43,7 @@
         {
             "model": "mobnetSI2R",
             "changes": [
-                "previsioni/comunipd-mobnetSI2R/2025_47.csv"
+                "previsioni/comunipd-mobnetSI2R/2025_48.csv"
             ]
         }
     ],
@@ -33,7 +51,7 @@
         {
             "model": "SIR_INN",
             "changes": [
-                "previsioni/C2S2_Trento-SIR_INN/2025_47.csv"
+                "previsioni/C2S2_Trento-SIR_INN/2025_48.csv"
             ]
         }
     ]
