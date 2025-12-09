@@ -32,5 +32,13 @@
                 "previsioni/EpiQMUL-ARIMA_QMUL/2025_48.csv"
             ]
         }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2025_48.csv"
+            ]
+        }
     ]
 }
