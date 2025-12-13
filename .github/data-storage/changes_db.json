@@ -5,6 +5,12 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2025_49.csv"
             ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2025_49.csv"
+            ]
         }
     ],
     "UNIPD_NEIDE": [
