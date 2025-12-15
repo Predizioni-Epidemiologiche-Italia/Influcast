@@ -27,6 +27,12 @@
             "changes": [
                 "previsioni/EpiQMUL-SEIR_QMUL/2025_49.csv"
             ]
+        },
+        {
+            "model": "EpiQMUL_tabpfnts",
+            "changes": [
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2025_49.csv"
+            ]
         }
     ]
 }
