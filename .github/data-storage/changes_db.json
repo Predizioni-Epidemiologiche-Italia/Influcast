@@ -3,21 +3,21 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2025_48.csv"
+                "previsioni/ISI-FluABCaster/2025_49.csv"
             ]
         },
         {
             "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluBcast/2025_48.csv"
+                "previsioni/ISI-FluBcast/2025_49.csv"
             ]
         }
     ],
-    "EpiQMUL": [
+    "UNIPD_NEIDE": [
         {
-            "model": "EpiQMUL_tabpfnts",
+            "model": "SEEIIRS_MCMC",
             "changes": [
-                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2025_48.csv"
+                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2025_49.csv"
             ]
         }
     ]
