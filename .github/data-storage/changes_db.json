@@ -3,7 +3,13 @@
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2025_49.csv"
+                "previsioni/ISI-FluABCaster/2025_50.csv"
+            ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2025_50.csv"
             ]
         }
     ]
