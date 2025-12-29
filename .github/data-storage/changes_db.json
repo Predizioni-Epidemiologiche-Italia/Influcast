@@ -1,1 +1,10 @@
-{}
+{
+    "UNIPD_NEIDE": [
+        {
+            "model": "SEEIIRS_MCMC",
+            "changes": [
+                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2025_51.csv"
+            ]
+        }
+    ]
+}
