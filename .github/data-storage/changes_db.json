@@ -6,5 +6,13 @@
                 "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2025_51.csv"
             ]
         }
+    ],
+    "ISI": [
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2025_51.csv"
+            ]
+        }
     ]
 }
