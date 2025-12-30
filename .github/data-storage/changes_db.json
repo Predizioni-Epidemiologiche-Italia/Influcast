@@ -25,6 +25,12 @@
             "changes": [
                 "previsioni/ISI-IPSICast/2025_51.csv"
             ]
+        },
+        {
+            "model": "FluABCaster",
+            "changes": [
+                "previsioni/ISI-FluABCaster/2025_51.csv"
+            ]
         }
     ],
     "EpiQMUL": [
