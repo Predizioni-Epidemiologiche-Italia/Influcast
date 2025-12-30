@@ -1,49 +1,49 @@
 {
+    "UNIPD_NEIDE": [
+        {
+            "model": "SEEIIRS_MCMC",
+            "changes": [
+                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2025_51.csv"
+            ]
+        }
+    ],
     "ISI": [
         {
-            "model": "FluABCaster",
+            "model": "GLEAM",
             "changes": [
-                "previsioni/ISI-FluABCaster/2025_50.csv"
+                "previsioni/ISI-GLEAM/2025_51.csv"
             ]
         },
         {
             "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluBcast/2025_50.csv"
-            ]
-        },
-        {
-            "model": "GLEAM",
-            "changes": [
-                "previsioni/ISI-GLEAM/2025_50.csv"
+                "previsioni/ISI-FluBcast/2025_51.csv"
             ]
         },
         {
             "model": "IPSICast",
             "changes": [
-                "previsioni/ISI-IPSICast/2025_50.csv"
+                "previsioni/ISI-IPSICast/2025_51.csv"
             ]
-        }
-    ],
-    "UNIPD_NEIDE": [
+        },
         {
-            "model": "SEEIIRS_MCMC",
+            "model": "FluABCaster",
             "changes": [
-                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2025_50.csv"
+                "previsioni/ISI-FluABCaster/2025_51.csv"
             ]
         }
     ],
     "EpiQMUL": [
         {
-            "model": "SEIR_QMUL",
+            "model": "EpiQMUL_tabpfnts",
             "changes": [
-                "previsioni/EpiQMUL-SEIR_QMUL/2025_50.csv"
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2025_51.csv"
             ]
         },
         {
-            "model": "EpiQMUL_tabpfnts",
+            "model": "SEIR_QMUL",
             "changes": [
-                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2025_50.csv"
+                "previsioni/EpiQMUL-SEIR_QMUL/2025_51.csv"
             ]
         }
     ],
@@ -51,7 +51,7 @@
         {
             "model": "mobnetSI2R",
             "changes": [
-                "previsioni/comunipd-mobnetSI2R/2025_50.csv"
+                "previsioni/comunipd-mobnetSI2R/2025_51.csv"
             ]
         }
     ]
