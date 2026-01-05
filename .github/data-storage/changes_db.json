@@ -22,5 +22,13 @@
                 "previsioni/C2S2_Trento-SIR_INN/2025_52.csv"
             ]
         }
+    ],
+    "ISI": [
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2025_52.csv"
+            ]
+        }
     ]
 }
