@@ -14,5 +14,13 @@
                 "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2025_52.csv"
             ]
         }
+    ],
+    "C2S2_Trento": [
+        {
+            "model": "SIR_INN",
+            "changes": [
+                "previsioni/C2S2_Trento-SIR_INN/2025_52.csv"
+            ]
+        }
     ]
 }
