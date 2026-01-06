@@ -2,7 +2,8 @@ name: SendDataUpdatedEmail
 
 on:
   workflow_run:
-    workflows: [FetchSurveillance]
+    # workflows: [FetchSurveillance]
+    workflows: [ValidateSurveillance]
       
     types:
       - completed  
