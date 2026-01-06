@@ -35,6 +35,18 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2025_52.csv"
             ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2025_52.csv"
+            ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2025_52.csv"
+            ]
         }
     ],
     "CSL_PoliTo": [
