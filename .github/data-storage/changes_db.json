@@ -29,6 +29,12 @@
             "changes": [
                 "previsioni/ISI-GLEAM/2025_52.csv"
             ]
+        },
+        {
+            "model": "FluABCaster",
+            "changes": [
+                "previsioni/ISI-FluABCaster/2025_52.csv"
+            ]
         }
     ]
 }
