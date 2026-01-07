@@ -1,1 +1,10 @@
-{}
+{
+    "EpiQMUL": [
+        {
+            "model": "SEIR_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIR_QMUL/2025_52.csv"
+            ]
+        }
+    ]
+}
