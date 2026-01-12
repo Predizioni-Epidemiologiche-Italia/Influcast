@@ -6,5 +6,13 @@
                 "previsioni/EpiQMUL-SEIR_QMUL/2026_01.csv"
             ]
         }
+    ],
+    "ISI": [
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2026_01.csv"
+            ]
+        }
     ]
 }
