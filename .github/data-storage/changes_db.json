@@ -12,5 +12,13 @@
                 "previsioni/ISI-FluABCaster/2026_03.csv"
             ]
         }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2026_03.csv"
+            ]
+        }
     ]
 }
