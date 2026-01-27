@@ -11,6 +11,12 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2026_03.csv"
             ]
+        },
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2026_03.csv"
+            ]
         }
     ],
     "comunipd": [
