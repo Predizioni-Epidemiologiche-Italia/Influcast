@@ -28,5 +28,13 @@
                 "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2026_03.csv"
             ]
         }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "SEIR_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIR_QMUL/2026_03.csv"
+            ]
+        }
     ]
 }
