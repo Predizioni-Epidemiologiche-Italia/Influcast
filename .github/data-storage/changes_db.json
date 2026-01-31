@@ -3,13 +3,7 @@
         {
             "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluBcast/2026_03.csv"
-            ]
-        },
-        {
-            "model": "FluABCaster",
-            "changes": [
-                "previsioni/ISI-FluABCaster/2026_03.csv"
+                "previsioni/ISI-FluBcast/2026_04.csv"
             ]
         }
     ]
