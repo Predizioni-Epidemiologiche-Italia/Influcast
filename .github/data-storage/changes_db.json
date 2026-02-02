@@ -36,5 +36,13 @@
                 "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2026_04.csv"
             ]
         }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2026_04.csv"
+            ]
+        }
     ]
 }
