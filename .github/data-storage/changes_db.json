@@ -28,5 +28,13 @@
                 "previsioni/C2S2_Trento-SIR_INN/2026_04.csv"
             ]
         }
+    ],
+    "UNIPD_NEIDE": [
+        {
+            "model": "SEEIIRS_MCMC",
+            "changes": [
+                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2026_04.csv"
+            ]
+        }
     ]
 }
