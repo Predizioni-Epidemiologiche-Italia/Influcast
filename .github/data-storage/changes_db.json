@@ -1,1 +1,48 @@
-{}
+{
+    "ISI": [
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2026_04.csv"
+            ]
+        }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "SEIR_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIR_QMUL/2026_04.csv"
+            ]
+        },
+        {
+            "model": "EpiQMUL_tabpfnts",
+            "changes": [
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2026_04.csv"
+            ]
+        }
+    ],
+    "C2S2_Trento": [
+        {
+            "model": "SIR_INN",
+            "changes": [
+                "previsioni/C2S2_Trento-SIR_INN/2026_04.csv"
+            ]
+        }
+    ],
+    "UNIPD_NEIDE": [
+        {
+            "model": "SEEIIRS_MCMC",
+            "changes": [
+                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2026_04.csv"
+            ]
+        }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2026_04.csv"
+            ]
+        }
+    ]
+}
