@@ -5,6 +5,12 @@
             "changes": [
                 "previsioni/ISI-FluBcast/2026_05.csv"
             ]
+        },
+        {
+            "model": "FluABCaster",
+            "changes": [
+                "previsioni/ISI-FluABCaster/2026_05.csv"
+            ]
         }
     ],
     "comunipd": [
