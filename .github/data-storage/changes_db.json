@@ -3,15 +3,15 @@
         {
             "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluBcast/2026_04.csv"
+                "previsioni/ISI-FluBcast/2026_05.csv"
             ]
         }
     ],
-    "EpiQMUL": [
+    "comunipd": [
         {
-            "model": "SEIR_QMUL",
+            "model": "mobnetSI2R",
             "changes": [
-                "previsioni/EpiQMUL-SEIR_QMUL/2026_04.csv"
+                "previsioni/comunipd-mobnetSI2R/2026_05.csv"
             ]
         }
     ]
