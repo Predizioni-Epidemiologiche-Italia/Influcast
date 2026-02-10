@@ -56,5 +56,13 @@
                 "previsioni/EpiQMUL-SEIR_QMUL/2026_05.csv"
             ]
         }
+    ],
+    "CSL_PoliTo": [
+        {
+            "model": "metaFlu",
+            "changes": [
+                "previsioni/CSL_PoliTo-metaFlu/2026_05.csv"
+            ]
+        }
     ]
 }
