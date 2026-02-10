@@ -49,6 +49,12 @@
             "changes": [
                 "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2026_05.csv"
             ]
+        },
+        {
+            "model": "SEIR_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIR_QMUL/2026_05.csv"
+            ]
         }
     ]
 }
