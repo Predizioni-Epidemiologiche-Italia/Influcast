@@ -3,7 +3,15 @@
         {
             "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluBcast/2026_05.csv"
+                "previsioni/ISI-FluBcast/2026_06.csv"
+            ]
+        }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "EpiQMUL_tabpfnts",
+            "changes": [
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2026_06.csv"
             ]
         }
     ]
