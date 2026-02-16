@@ -3,15 +3,29 @@
         {
             "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluBcast/2026_05.csv"
+                "previsioni/ISI-FluBcast/2026_06.csv"
+            ]
+        },
+        {
+            "model": "FluABCaster",
+            "changes": [
+                "previsioni/ISI-FluABCaster/2026_06.csv"
             ]
         }
     ],
-    "comunipd": [
+    "EpiQMUL": [
         {
-            "model": "mobnetSI2R",
+            "model": "EpiQMUL_tabpfnts",
             "changes": [
-                "previsioni/comunipd-mobnetSI2R/2026_05.csv"
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2026_06.csv"
+            ]
+        }
+    ],
+    "UNIPD_NEIDE": [
+        {
+            "model": "SEEIIRS_MCMC",
+            "changes": [
+                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2026_06.csv"
             ]
         }
     ]
