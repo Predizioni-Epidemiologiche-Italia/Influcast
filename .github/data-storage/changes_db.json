@@ -3,23 +3,21 @@
         {
             "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluBcast/2026_05.csv"
+                "previsioni/ISI-FluBcast/2026_06.csv"
+            ]
+        },
+        {
+            "model": "FluABCaster",
+            "changes": [
+                "previsioni/ISI-FluABCaster/2026_06.csv"
             ]
         }
     ],
-    "comunipd": [
+    "EpiQMUL": [
         {
-            "model": "mobnetSI2R",
+            "model": "EpiQMUL_tabpfnts",
             "changes": [
-                "previsioni/comunipd-mobnetSI2R/2026_05.csv"
-            ]
-        }
-    ],
-    "C2S2_Trento": [
-        {
-            "model": "SIR_INN",
-            "changes": [
-                "previsioni/C2S2_Trento-SIR_INN/2026_05.csv"
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2026_06.csv"
             ]
         }
     ]
