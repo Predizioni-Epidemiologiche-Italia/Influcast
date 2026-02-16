@@ -36,5 +36,13 @@
                 "previsioni/C2S2_Trento-SIR_INN/2026_06.csv"
             ]
         }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2026_06.csv"
+            ]
+        }
     ]
 }
