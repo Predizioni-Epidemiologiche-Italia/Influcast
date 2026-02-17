@@ -56,5 +56,13 @@
                 "previsioni/comunipd-mobnetSI2R/2026_06.csv"
             ]
         }
+    ],
+    "CSL_PoliTo": [
+        {
+            "model": "metaFlu",
+            "changes": [
+                "previsioni/CSL_PoliTo-metaFlu/2026_06.csv"
+            ]
+        }
     ]
 }
