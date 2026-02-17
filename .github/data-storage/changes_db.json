@@ -3,43 +3,19 @@
         {
             "model": "FluBcast",
             "changes": [
-                "previsioni/ISI-FluBcast/2026_05.csv"
+                "previsioni/ISI-FluBcast/2026_06.csv"
             ]
         },
         {
             "model": "FluABCaster",
             "changes": [
-                "previsioni/ISI-FluABCaster/2026_05.csv"
+                "previsioni/ISI-FluABCaster/2026_06.csv"
             ]
         },
         {
             "model": "IPSICast",
             "changes": [
-                "previsioni/ISI-IPSICast/2026_05.csv"
-            ]
-        }
-    ],
-    "comunipd": [
-        {
-            "model": "mobnetSI2R",
-            "changes": [
-                "previsioni/comunipd-mobnetSI2R/2026_05.csv"
-            ]
-        }
-    ],
-    "C2S2_Trento": [
-        {
-            "model": "SIR_INN",
-            "changes": [
-                "previsioni/C2S2_Trento-SIR_INN/2026_05.csv"
-            ]
-        }
-    ],
-    "UNIPD_NEIDE": [
-        {
-            "model": "SEEIIRS_MCMC",
-            "changes": [
-                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2026_05.csv"
+                "previsioni/ISI-IPSICast/2026_06.csv"
             ]
         }
     ],
@@ -47,7 +23,31 @@
         {
             "model": "EpiQMUL_tabpfnts",
             "changes": [
-                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2026_05.csv"
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2026_06.csv"
+            ]
+        }
+    ],
+    "UNIPD_NEIDE": [
+        {
+            "model": "SEEIIRS_MCMC",
+            "changes": [
+                "previsioni/UNIPD_NEIDE-SEEIIRS_MCMC/2026_06.csv"
+            ]
+        }
+    ],
+    "C2S2_Trento": [
+        {
+            "model": "SIR_INN",
+            "changes": [
+                "previsioni/C2S2_Trento-SIR_INN/2026_06.csv"
+            ]
+        }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2026_06.csv"
             ]
         }
     ]
