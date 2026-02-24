@@ -5,6 +5,12 @@
             "changes": [
                 "previsioni/ISI-FluBcast/2026_07.csv"
             ]
+        },
+        {
+            "model": "IPSICast",
+            "changes": [
+                "previsioni/ISI-IPSICast/2026_07.csv"
+            ]
         }
     ],
     "EpiQMUL": [
