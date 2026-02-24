@@ -19,6 +19,12 @@
             "changes": [
                 "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2026_07.csv"
             ]
+        },
+        {
+            "model": "SEIR_QMUL",
+            "changes": [
+                "previsioni/EpiQMUL-SEIR_QMUL/2026_07.csv"
+            ]
         }
     ],
     "UNIPD_NEIDE": [
