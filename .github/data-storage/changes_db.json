@@ -6,5 +6,13 @@
                 "previsioni/ISI-FluBcast/2026_08.csv"
             ]
         }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "EpiQMUL_tabpfnts",
+            "changes": [
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2026_08.csv"
+            ]
+        }
     ]
 }
