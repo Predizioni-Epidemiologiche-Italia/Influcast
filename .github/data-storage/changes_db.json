@@ -17,6 +17,12 @@
             "changes": [
                 "previsioni/ISI-FluABCaster/2026_08.csv"
             ]
+        },
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2026_08.csv"
+            ]
         }
     ],
     "EpiQMUL": [
