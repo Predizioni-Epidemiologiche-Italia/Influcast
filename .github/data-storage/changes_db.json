@@ -11,6 +11,12 @@
             "changes": [
                 "previsioni/ISI-IPSICast/2026_09.csv"
             ]
+        },
+        {
+            "model": "GLEAM",
+            "changes": [
+                "previsioni/ISI-GLEAM/2026_09.csv"
+            ]
         }
     ],
     "EpiQMUL": [
