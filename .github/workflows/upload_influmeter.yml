@@ -1,4 +1,4 @@
-name: Forecast Upload
+name: Influmeter Upload
 
 on:
   # scheduled submission every Wednesday at 00.10 a.m. (Tuesday 23.10 p.m.UTC)
@@ -40,7 +40,7 @@ jobs:
       - name: Get changes list
         id: get_changes
         run: |
-          content=`cat ./repo/.github/data-storage/changes_db.json`
+          content=`cat ./repo/.github/data-storage/influmeter_db.json`
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
@@ -59,7 +59,7 @@ jobs:
           webhook_url: ${{ secrets.WEB_HOOK_URL }}
           webhook_secret: ${{ secrets.WEB_HOOK_SECRET }}
           data: ${{ steps.get_changes.outputs.packageJson }}
-          data_type: "forecast"
+          data_type: "influmeter"
           season: "NA"
           
         run: |
