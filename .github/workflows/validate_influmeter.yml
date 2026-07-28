@@ -13,9 +13,9 @@ jobs:
     validate_request:
         runs-on: ubuntu-latest
         outputs: 
-          is_valid: ${{ steps.authenticate.outputs.authenticate == 'success' }}
+          is_valid: ${{ steps.validate.outputs.validate == 'success' }}
           changed_files:  ${{ steps.get_changed_files.outputs.all_changed_files }}
-          authenticate_error_msg: ${{ steps.authenticate.outputs.message }}
+          validate_error_msg: ${{ steps.validate.outputs.message }}
           
           
         steps:    
@@ -30,7 +30,7 @@ jobs:
     
           
           # Checkout the python tools repo
-          # used to authenticate and validate the PR
+          # used to validate and validate the PR
           # -------------------------------------------      
           - name: checkout python tools repo
             uses: actions/checkout@v3
@@ -47,11 +47,11 @@ jobs:
             id: get_changed_files
             uses: tj-actions/changed-files@v46
             
-          # Authenticate the pull_request 
-          # returns as output authentication = { True / False }
+          # validate the pull_request 
+          # returns as output validation = { True / False }
           # -------------------------------      
-          - name: Execute Authentication script
-            id: authenticate
+          - name: Execute Validation script
+            id: validate
             env:
               calling_actor: ${{ github.actor }}
               changed_files: ${{ steps.get_changed_files.outputs.all_changed_files }}
@@ -143,7 +143,7 @@ jobs:
               echo ">>> SrcPath: $GITHUB_WORKSPACE"
               echo ">>> Pull request number: ${{ github.event.pull_request.number }}"
               echo ">>> Git hub actor: ${{ github.actor }}"
-              echo ">>> Authenticate Error Message ${{ needs.validate_request.outputs.authenticate_error_msg  }}"
+              echo ">>> validate Error Message ${{ needs.validate_request.outputs.validate_error_msg  }}"
     
     
           # Inform the user about what went wrong
@@ -151,6 +151,6 @@ jobs:
             uses: thollander/actions-comment-pull-request@v2
             with:
               message: |
-                An error occurred during authentication: ${{  needs.validate_request.outputs.authenticate_error_msg }}
+                An error occurred during validation: ${{  needs.validate_request.outputs.validate_error_msg }}
               pr_number: ${{ github.event.pull_request.number }}
     
