@@ -1,9 +1,9 @@
-name: FetchSurveillance
+name: GenerateInflumeterSubmission
 
 on:
   schedule:
-    # Ogni venerdì alle 18:00 UTC (~19:00 Roma in inverno)
-    - cron: "00 18 * * 5"
+    # Ogni mercoledì alle 02:00 UTC (~03:00 Roma in inverno)
+    - cron: "00 02 * * 4"
     
   workflow_dispatch: {}
 
