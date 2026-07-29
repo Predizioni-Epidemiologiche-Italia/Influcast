@@ -11,8 +11,9 @@ permissions:
   contents: write
   pull-requests: write
 
+# controlla esecuzioni parallele del workflow
 concurrency:
-  group: fetch-surveillance
+  group: generate-influmeter-index
   cancel-in-progress: false
 
 jobs:
@@ -49,64 +50,22 @@ jobs:
 
       - name: Install deps
         run: |
-          # python -m pip install --upgrade pip
-          # pip install  pandas beautifulsoup4 numpy isoweek
-          
           python -m pip install -U pip wheel setuptools
-          # co-installo numpy+pandas (compatibili) e i parser HTML
+          # co-installo numpy+pandas (compatibili)
           pip install --only-binary=:all: "numpy>=2,<3" "pandas>=2.2,<3"
-          pip install requests lxml html5lib beautifulsoup4
           python - <<'PY'
           import numpy, pandas, lxml, bs4, html5lib
           print("numpy", numpy.__version__)
           print("pandas", pandas.__version__)
-          print("lxml OK, bs4 OK, html5lib OK")
           PY
       
       # TODO  Install dependencies from text file
-        #   pip install -r requirements.txt
+      #   pip install -r requirements.txt
 
 
-      - name: |
+      - name: Compute index
         run: |
-          python tools/code/parser_respivirnet.py
-
-
-      - name: List surveillance folders (recursive)
-        run: |
-            set -euo pipefail
-            for d in ./sorveglianza/ARI/2025-2026 ./sorveglianza/ARI+_FLU/2025-2026; do
-              echo "::group::Listing $d"
-              if [ -d "$d" ]; then
-                echo "# ls -laR"
-                ls -laR "$d"
-                echo
-                echo "# files (path | size KB | mtime)"
-                find "$d" -type f -printf "%p\t%k KB\t%TY-%Tm-%Td %TH:%TM\n" | sort
-              else
-                echo "Directory not found: $d"
-              fi
-              echo "::endgroup::"
-            done
-
-    #   - name: Run fetch wrapper
-    #     env:
-    #       TZ: Europe/Rome
-    #     run: |
-    #       python tools/fetch_surveillance.py
-
-      # - name: Sync fork default branch with upstream
-      #   env:
-      #     GH_TOKEN: ${{ secrets.ACTIONS_BOT_PAT }}   # as fork owner PAT
-      #     REPO_FORK: M-7th/Influcast-Fork
-      #     REPO_UPSTREAM: Predizioni-Epidemiologiche-Italia/Influcast
-      #   run: |      
-      #     # sincronizza il branch del fork con l'upstream
-      #     # (se già allineato, l'endpoint può restituire 204/no content: non è un errore)
-      #     gh api -X POST repos/$REPO_FORK/merge-upstream -f branch="main" || true
-      
-      #     echo "Fork sincronizzato con upstream/$DEFAULT"
-
+          python tools/code/compute_influmeter_index.py 2026_09 ./output/2026_09_influmeter.csv
 
 
       - name: Create PR with changes
@@ -114,19 +73,18 @@ jobs:
         with:
           token: ${{ secrets.ACTIONS_BOT_PAT }}   # <— PAT, non GITHUB_TOKEN. Generated on base of INFLUCAST_GH_PAT from M-7th
           push-to-fork: M-7th/Influcast-Fork
-          commit-message: "surveillance: add weekly ISS data (auto)" 
+          commit-message: "New influmeter index submission (auto)" 
           branch: "bot/iss-${{ github.run_id }}" # nome unico; in alternativa usa ISO week
           base: "main"
-          title: "Surveillance: weekly ISS data"
+          title: "Submitting new influmeter index"
           body: |
-            Automated PR adding weekly surveillance data (ARI, ARI+_FLU).
+            Automated PR adding weekly influmeter index (ARI).
             - Timezone: Europe/Rome
             - If files already existed, no changes were committed.
           add-paths: |
-            ./sorveglianza/ARI/**
-            ./sorveglianza/ARI+_FLU/**
+            ./previsioni/influmeter/**
           labels: |
             automation
-            surveillance
+            influmeter
           draft: false
           signoff: false
