@@ -22,11 +22,11 @@ jobs:
     
           # Check out the submission repo
           # -------------------------------------------      
-          - name: Checkout code
-            uses: actions/checkout@v3
-            with:
-              token: ${{ secrets.GITHUB_TOKEN }}
-              ref: ${{ github.event.pull_request.head.sha }}
+          # - name: Checkout code
+          #   uses: actions/checkout@v3
+          #   with:
+          #     token: ${{ secrets.GITHUB_TOKEN }}
+          #     ref: ${{ github.event.pull_request.head.sha }}
     
           
           # Checkout the python tools repo
@@ -46,6 +46,23 @@ jobs:
           - name: Get changes
             id: get_changed_files
             uses: tj-actions/changed-files@v46
+
+          # 
+          # ---------------------------------
+          - name: Fetch changed influmeter files (data only, no need to checkout the entire fork)
+            env:
+              GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              changed_files: ${{ steps.get_changed_files.outputs.all_changed_files }}
+              head_repo: ${{ github.event.pull_request.head.repo.full_name }}
+              head_sha: ${{ github.event.pull_request.head.sha }}
+            run: |
+              for f in $changed_files; do
+                mkdir -p "$(dirname "$f")"
+                gh api "repos/$head_repo/contents/$f?ref=$head_sha" --jq '.content' \
+                  | base64 -d > "$f"
+              done
+
+            
             
           # validate the pull_request 
           # returns as output validation = { True / False }
