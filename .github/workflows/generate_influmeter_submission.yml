@@ -54,7 +54,7 @@ jobs:
           # co-installo numpy+pandas (compatibili)
           pip install --only-binary=:all: "numpy>=2,<3" "pandas>=2.2,<3"
           python - <<'PY'
-          import numpy, pandas, lxml, bs4, html5lib
+          import numpy, pandas
           print("numpy", numpy.__version__)
           print("pandas", pandas.__version__)
           PY
