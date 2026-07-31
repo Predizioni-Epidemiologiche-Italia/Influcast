@@ -76,6 +76,15 @@ jobs:
             run: python ./tools/.github/scripts/forecast_validation/validate_influmeter.py
 
 
+          - name: Trace for Debug
+            env:
+              is_valid: ${{ steps.validate.outputs.validate == 'success' }}
+            run: |
+              echo " Val: ${{ steps.validate.outputs.validate }}"
+              echo " IsVal: $is_valid" 
+
+
+
     # -------------------------------------------
     # SUCCESS
     # -------------------------------------------
