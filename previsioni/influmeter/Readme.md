@@ -1,3 +1,5 @@
+[![English](https://img.shields.io/badge/lang-English-blue)](Readme.md) [![Italiano](https://img.shields.io/badge/lang-Italiano-green)](Readme.it.md)
+
 # InfluMeter Index & MEM Band Probabilities
 
 This document describes, mathematically, how we compute the InfluMeter index and the MEM band probabilities from an ensemble forecast's predictive quantiles.
