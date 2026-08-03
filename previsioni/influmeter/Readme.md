@@ -89,7 +89,7 @@ P(\text{high}) = \big(F(t_4) - F(t_3)\big) \times 100
 $$
 
 $$
-P(\text{very\_high}) = \big(1 - F(t_4)\big) \times 100
+P(\text{very high}) = \big(1 - F(t_4)\big) \times 100
 $$
 
 By construction of $F$ (a proper CDF running from 0 to 1 over the 98% span),

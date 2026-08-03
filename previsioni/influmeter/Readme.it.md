@@ -93,7 +93,7 @@ P(\text{high}) = \big(F(t_4) - F(t_3)\big) \times 100
 $$
 
 $$
-P(\text{very\_high}) = \big(1 - F(t_4)\big) \times 100
+P(\text{very high}) = \big(1 - F(t_4)\big) \times 100
 $$
 
 Per costruzione di $F$ (una CDF propria che va da 0 a 1 sull'intervallo del
