@@ -78,7 +78,7 @@ jobs:
           wh_response:  ${{ steps.invoke_webhook.outputs.run_results }}
         run: |
           echo "UPLOAD SUCCEEDED -  clear djson db"
-          python ./tools/code/clear_data_storage.py --storage_type "previsioni"
+          python ./tools/code/clear_data_storage.py --storage_type "influmeter"
 
       # RUN FAILURE
       # --------------------------------------------
@@ -89,7 +89,7 @@ jobs:
           
         run: |
           echo "UPLOAD FAILED - Some ingestion failed"
-          python ./tools/code/clear_data_storage.py --storage_type "previsioni" 
+          python ./tools/code/clear_data_storage.py --storage_type "influmeter" 
 
       # ERROR RUN
       # --------------------------------------------
