@@ -56,10 +56,10 @@ jobs:
       - name: Invoke deployment hook
         id: invoke_webhook
         env:
-          # webhook_url: ${{ secrets.TEST_WEB_HOOK_URL }}
-          webhook_url: ${{ vars.TEST_WEB_HOOK_URL_VAR }}          
-          webhook_secret: ${{ vars.TEST_WEB_HOOK_SECRET_VAR }}
-          # webhook_secret: ${{ secrets.TEST_WEB_HOOK_SECRET }}
+          webhook_url: ${{ secrets.TEST_WEB_HOOK_URL }}
+          # webhook_url: ${{ vars.TEST_WEB_HOOK_URL_VAR }}          
+          # webhook_secret: ${{ vars.TEST_WEB_HOOK_SECRET_VAR }}
+          webhook_secret: ${{ secrets.TEST_WEB_HOOK_SECRET }}
           data: ${{ steps.get_changes.outputs.packageJson }}
           data_type: "influmeter"
           season: "NA"
