@@ -97,6 +97,7 @@ jobs:
         if: ${{ steps.invoke_webhook.outputs.run_results.status == 'error'}}
         run: |
           echo "UPLOAD FAILED -  ignore djson db cleaning"
+          exit 1
 
       # Final commit
       # --------------------------------------------
@@ -108,3 +109,24 @@ jobs:
           message: "Update model-output db json"
           default_author: github_actions
           push: true
+
+      # FAILURE NOTIFICATION
+      # --------------------------------------------
+      - name: Send warning email to admin
+        if: ${{ failure() }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "Influcast - Forecast upload error!"
+          body: |
+            Hi,
+
+            An error occurred during the Forecast Upload workflow.
+
+            InfluCast tech team.
+          to: paolo.milano@isi.it,corrado.gioannini@isi.it,nicolo.gozzi@isi.it
+          from: "Influcast Team <influcast@isi.it>"
+          content_type: text/plain
