@@ -67,16 +67,16 @@ jobs:
         id: current_week
         run: python tools/code/get_current_forecasting_week.py
       
-      - name: Compute index
-        run: |
-          python tools/code/compute_influmeter_index.py \
-            "${{ steps.current_week.outputs.year_week }}" \
-            "${{ steps.current_week.outputs.csv_path }}"
-
-
       # - name: Compute index
       #   run: |
-      #     python tools/code/compute_influmeter_index.py 2026_09 ./previsioni/influmeter/2026_09_influmeter.csv
+      #     python tools/code/compute_influmeter_index.py \
+      #       "${{ steps.current_week.outputs.year_week }}" \
+      #       "${{ steps.current_week.outputs.csv_path }}"
+
+
+      - name: Compute index
+        run: |
+          python tools/code/compute_influmeter_index.py 2026_09 ./previsioni/influmeter/2026_09_influmeter.csv
 
 
       - name: Create PR with changes
