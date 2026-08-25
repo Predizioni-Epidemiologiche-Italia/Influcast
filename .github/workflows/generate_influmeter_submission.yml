@@ -76,7 +76,7 @@ jobs:
 
       - name: Compute index
         run: |
-          python tools/code/compute_influmeter_index.py 2026_09 ./previsioni/influmeter/2026_09_influmeter.csv
+          python tools/code/compute_influmeter_index.py 2026_08 ./previsioni/influmeter/2026_08_influmeter.csv
 
 
       - name: Create PR with changes
