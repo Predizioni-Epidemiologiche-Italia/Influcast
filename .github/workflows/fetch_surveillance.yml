@@ -19,6 +19,10 @@ jobs:
   fetch-and-pr:
     if: github.repository_owner == 'Predizioni-Epidemiologiche-Italia'
     runs-on: ubuntu-latest
+
+    env:
+      SEASON: "2026-2027"
+      
     steps:
       # Checkout the Influcast repo
       # used to authenticate and validate the PR
@@ -69,13 +73,13 @@ jobs:
 
       - name: |
         run: |
-          python tools/code/parser_respivirnet.py
+          python tools/code/parser_respivirnet.py --season "$SEASON"
 
 
       - name: List surveillance folders (recursive)
         run: |
-            set -euo pipefail
-            for d in ./sorveglianza/ARI/2025-2026 ./sorveglianza/ARI+_FLU/2025-2026; do
+            set -euo pipefail            
+            for d in "./sorveglianza/ARI/$SEASON" "./sorveglianza/ARI+_FLU/$SEASON"; do
               echo "::group::Listing $d"
               if [ -d "$d" ]; then
                 echo "# ls -laR"
