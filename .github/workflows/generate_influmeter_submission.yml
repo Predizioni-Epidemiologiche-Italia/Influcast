@@ -23,10 +23,15 @@ jobs:
     steps:
 
 
-      - name: Identify PAT
+      - name: Verify ACTIONS_BOT_PAT
         env:
           GH_TOKEN: ${{ secrets.ACTIONS_BOT_PAT }}
         run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::ACTIONS_BOT_PAT is empty or unavailable"
+            exit 1
+          fi
+      
           gh api user --jq '.login'
     
       # Checkout the Influcast repo
