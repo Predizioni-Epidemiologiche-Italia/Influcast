@@ -112,8 +112,8 @@ jobs:
       - name: Create PR with changes
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.ACTIONS_BOT_PAT }}   # <— PAT, non GITHUB_TOKEN. Generated on base of INFLUCAST_GH_PAT from M-7th
-          push-to-fork: M-7th/Influcast-Fork
+          token: ${{ secrets.ACTIONS_BOT_PAT }}   # <— PAT, non GITHUB_TOKEN. Generated on base of INFLUCAST_AUTOMATION_PAT from M-7th
+          # push-to-fork: M-7th/Influcast-Fork
           commit-message: "surveillance: add weekly ISS data (auto)" 
           branch: "bot/iss-${{ github.run_id }}" # nome unico; in alternativa usa ISO week
           base: "main"
