@@ -21,6 +21,14 @@ jobs:
     if: github.repository_owner == 'Predizioni-Epidemiologiche-Italia'
     runs-on: ubuntu-latest
     steps:
+
+
+      - name: Identify PAT
+        env:
+          GH_TOKEN: ${{ secrets.ACTIONS_BOT_PAT }}
+        run: |
+          gh api user --jq '.login'
+    
       # Checkout the Influcast repo
       # used to authenticate and validate the PR
       # -------------------------------------------            
