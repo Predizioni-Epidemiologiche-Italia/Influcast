@@ -1,1 +1,42 @@
-{}
+{
+    "season": "2026-2027",
+    "targets": [
+        {
+            "name": "ARI+_FLU_A",
+            "changes": [
+                "sorveglianza/ARI+_FLU/2026-2027/italia-2026_01-ARI+_FLU_A.csv"
+            ]
+        },
+        {
+            "name": "ARI+_FLU_B",
+            "changes": [
+                "sorveglianza/ARI+_FLU/2026-2027/italia-2026_01-ARI+_FLU_B.csv"
+            ]
+        },
+        {
+            "name": "ARI",
+            "changes": [
+                "sorveglianza/ARI/2026-2027/abruzzo-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/basilicata-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/campania-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/emilia_romagna-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/friuli_venezia_giulia-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/italia-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/lazio-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/liguria-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/lombardia-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/marche-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/pa_bolzano-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/pa_trento-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/piemonte-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/puglia-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/sardegna-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/sicilia-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/toscana-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/umbria-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/valle_d_aosta-2026_01-ARI.csv",
+                "sorveglianza/ARI/2026-2027/veneto-2026_01-ARI.csv"
+            ]
+        }
+    ]
+}
