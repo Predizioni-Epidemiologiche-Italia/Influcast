@@ -1,1 +1,10 @@
-{}
+{
+    "ISI": [
+        {
+            "model": "Respiro",
+            "changes": [
+                "previsioni/ISI-Respiro/2026_46.csv"
+            ]
+        }
+    ]
+}
