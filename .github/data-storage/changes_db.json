@@ -12,5 +12,13 @@
                 "previsioni/ISI-FluBcast/2026_46.csv"
             ]
         }
+    ],
+    "CNR4Cast": [
+        {
+            "model": "SIR_EnKF",
+            "changes": [
+                "previsioni/CNR4Cast-SIR_EnKF/2026_46.csv"
+            ]
+        }
     ]
 }
