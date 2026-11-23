@@ -5,6 +5,12 @@
             "changes": [
                 "previsioni/ISI-Respiro/2026_46.csv"
             ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2026_46.csv"
+            ]
         }
     ]
 }
