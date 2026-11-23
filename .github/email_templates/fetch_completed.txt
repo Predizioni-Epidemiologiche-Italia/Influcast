@@ -3,8 +3,8 @@ Dear Teams,
 New surveillance data has been uploaded to InfluCast, and submissions are now open for the latest forecasting round.
 
 Please find the relevant links below:
-•  Latest ARI data: https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/tree/main/sorveglianza/ARI/2025-2026/latest
-•  Latest ARI+ data: https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/tree/main/sorveglianza/ARI%2B_FLU/2025-2026/latest
+•  Latest ARI data: https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/tree/main/sorveglianza/ARI/2026-2027/latest
+•  Latest ARI+ data: https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/tree/main/sorveglianza/ARI%2B_FLU/2026-2027/latest
 
 To view the specific weeks included in this round, please refer to the following file:
 https://github.com/Predizioni-Epidemiologiche-Italia/Influcast/blob/main/supporting-files/forecasting_weeks.csv

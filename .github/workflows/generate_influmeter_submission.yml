@@ -1,0 +1,114 @@
+name: GenerateInflumeterSubmission
+
+on:
+  schedule:
+    # Ogni mercoledì alle 02:00 UTC (~03:00 Roma in inverno)
+    - cron: "00 02 * * 4"
+    
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# controlla esecuzioni parallele del workflow
+concurrency:
+  group: generate-influmeter-index
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-pr:
+    if: github.repository_owner == 'Predizioni-Epidemiologiche-Italia'
+    runs-on: ubuntu-latest
+    steps:
+
+
+      - name: Verify ACTIONS_BOT_PAT
+        env:
+          GH_TOKEN: ${{ secrets.ACTIONS_BOT_PAT }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::ACTIONS_BOT_PAT is empty or unavailable"
+            exit 1
+          fi
+      
+          gh api user --jq '.login'
+    
+      # Checkout the Influcast repo
+      # used to authenticate and validate the PR
+      # -------------------------------------------            
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.ref }}
+
+
+      # Checkout the python tools repo
+      # used to authenticate and validate the PR
+      # -------------------------------------------      
+      - name: checkout python tools repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: 'Predizioni-Epidemiologiche-Italia/hub-tools'
+          ref: 'main'
+          path: './tools'
+
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install -U pip wheel setuptools
+          # co-installo numpy+pandas (compatibili)
+          pip install --only-binary=:all: "numpy>=2,<3" "pandas>=2.2,<3"
+          python - <<'PY'
+          import numpy, pandas
+          print("numpy", numpy.__version__)
+          print("pandas", pandas.__version__)
+          PY
+      
+      # TODO  Install dependencies from text file
+      #   pip install -r requirements.txt
+
+
+      - name: Get current forecasting week
+        id: current_week
+        run: python tools/code/get_current_forecasting_week.py
+      
+      - name: Compute index
+        run: |
+          python tools/code/compute_influmeter_index.py \
+            "${{ steps.current_week.outputs.year_week }}" \
+            "${{ steps.current_week.outputs.csv_path }}"
+
+
+      # - name: Compute index
+      #   run: |
+      #     python tools/code/compute_influmeter_index.py 2025_50 ./previsioni/influmeter/2025_50_influmeter.csv
+
+
+      - name: Create PR with changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.ACTIONS_BOT_PAT }}   # <— PAT, non GITHUB_TOKEN. Generated on base of INFLUCAST_AUTOMATION_PAT from M-7th
+          # push-to-fork: M-7th/Influcast-Fork
+          commit-message: "New influmeter index submission (auto)" 
+          branch: "bot/iss-${{ github.run_id }}" # nome unico; in alternativa usa ISO week
+          base: "main"
+          title: "Submitting new influmeter index"
+          body: |
+            Automated PR adding weekly influmeter index (ARI).
+            - Timezone: Europe/Rome
+            - If files already existed, no changes were committed.
+          add-paths: |
+            ./previsioni/influmeter/**
+          labels: |
+            automation
+            influmeter
+          draft: false
+          signoff: false

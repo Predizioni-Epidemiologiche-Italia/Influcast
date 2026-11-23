@@ -1,188 +1,171 @@
-# merge submission on the main branch after a pullrequest approval
 name: ValidateSubmission
-on: 
+on:
   pull_request_target:
-    branches: [ main ]
+    branches: [main]
     paths:
       - 'previsioni/**'
+      - '!previsioni/influmeter/**'
       - '!**README**'
-      
-    
-jobs:
 
-  # Firts authenticate user based on PR details
+permissions:
+  contents: read
+
+jobs:
   validate_request:
     runs-on: ubuntu-latest
-    outputs: 
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
       validate_error_msg: ${{ steps.validate.outputs.message }}
       authenticate_error_msg: ${{ steps.authenticate.outputs.message }}
-      changed_files:  ${{ steps.get_changed_files.outputs.all_changed_files }}
+      changed_files: ${{ steps.get_changed_files.outputs.all_changed_files }}
       is_valid: ${{ steps.validate.outputs.validate == 'success' && steps.authenticate.outputs.authenticate == 'success' }}
-      
-      
-    steps:    
-
-      # Check out the submission repo
-      # -------------------------------------------      
-      - name: Checkout code
-        uses: actions/checkout@v3
+    steps:
+      # Only trusted validation code is checked out; fork code is never checked out.
+      - name: Checkout python tools
+        uses: actions/checkout@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          ref: ${{ github.event.pull_request.head.sha }}
+          repository: Predizioni-Epidemiologiche-Italia/hub-tools
+          ref: main
+          path: tools
+          persist-credentials: false
 
-      
-      # Checkout the python tools repo
-      # used to authenticate and validate the PR
-      # -------------------------------------------      
-      - name: checkout python tools repo
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: 'Predizioni-Epidemiologiche-Italia/hub-tools'
-          ref: 'main'
-          path: './tools'
-
-
-      # Get changes from pull request 
-      # --------------------------------      
-      - name: Get changes
+      - name: Get changes and download submission CSVs
         id: get_changed_files
-        uses: tj-actions/changed-files@v46
-        
-      # Run Pyton code
-      # -------------------------
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const fs = require('node:fs/promises');
+            const path = require('node:path');
+            const crypto = require('node:crypto');
+            const pr = context.payload.pull_request;
+            const params = { ...context.repo, pull_number: pr.number };
+            const assertHead = async () => {
+              const { data } = await github.rest.pulls.get(params);
+              if (data.state !== 'open' || data.head.sha !== pr.head.sha ||
+                  data.base.sha !== pr.base.sha) {
+                throw new Error('PR changed since this run started. Start a new run.');
+              }
+              return data;
+            };
+            const current = await assertHead();
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              ...params, per_page: 100
+            });
+            if (!files.length || files.length !== current.changed_files) {
+              throw new Error('Could not retrieve the complete PR file list.');
+            }
+            // Validate the entire list before writing any submitted data.
+            for (const file of files) {
+              if (!/^previsioni\/[A-Za-z0-9][A-Za-z0-9_-]*\/\d{4}_\d{2}\.csv$/.test(file.filename) ||
+                  file.filename.startsWith('previsioni/influmeter/') ||
+                  !['added', 'modified'].includes(file.status)) {
+                throw new Error(`Unsupported submission change: ${file.filename} (${file.status})`);
+              }
+            }
+            const root = path.join(process.env.GITHUB_WORKSPACE, 'submission-data');
+            await fs.mkdir(root, { recursive: false });
+            for (const file of files) {
+              // listFiles supplies the exact blob SHA for this PR revision.
+              const { data } = await github.rest.git.getBlob({
+                owner: pr.head.repo.owner.login,
+                repo: pr.head.repo.name,
+                file_sha: file.sha
+              });
+              if (data.encoding !== 'base64') throw new Error('Unexpected blob encoding');
+              const bytes = Buffer.from(data.content, 'base64');
+              const digest = crypto.createHash('sha1')
+                .update(Buffer.from(`blob ${bytes.length}\0`)).update(bytes).digest('hex');
+              if (digest !== file.sha) throw new Error('Downloaded blob SHA mismatch');
+              const destination = path.join(root, file.filename);
+              await fs.mkdir(path.dirname(destination), { recursive: true });
+              await fs.writeFile(destination, bytes, { flag: 'wx' });
+            }
+            await assertHead();
+            core.setOutput('all_changed_files', files.map(file => file.filename).join(' '));
+
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.10' 
-    
+          python-version: '3.10'
       - run: pip install isoweek==1.3.3
-          
-      # Authenticate the pull_request 
-      # returns as output authentication = { True / False }
-      # -------------------------------      
+
       - name: Execute Authentication script
         id: authenticate
+        working-directory: submission-data
         env:
-          calling_actor: ${{ github.actor }}
+          calling_actor: ${{ github.event.pull_request.user.login }}
           changed_files: ${{ steps.get_changed_files.outputs.all_changed_files }}
-          
-        run: python ./tools/.github/scripts/request_authentication/request_authenticate.py
+        run: python "$GITHUB_WORKSPACE/tools/.github/scripts/request_authentication/request_authenticate.py"
 
-        
-      # If authenticated proceed with validation
-      # returns as output validation = { True / False }
-      # -------------------------------------------      
       - name: Execute Validation script
         id: validate
+        if: steps.authenticate.outputs.authenticate == 'success'
+        working-directory: submission-data
         env:
           changed_files: ${{ steps.get_changed_files.outputs.all_changed_files }}
-          
-        # run: python ./tools/.github/scripts/forecast_validation/validate.py
-        run: python ./tools/.github/scripts/forecast_validation/extended_validate.py
+        run: python "$GITHUB_WORKSPACE/tools/.github/scripts/forecast_validation/extended_validate.py"
 
-      - name: Trace for Debug
-        env:
-          is_valid: ${{ steps.validate.outputs.validate == 'success' && steps.authenticate.outputs.authenticate == 'success' }}
-        run: |
-          echo " Auth: ${{ steps.authenticate.outputs.authenticate }}"
-          echo " Val: ${{ steps.validate.outputs.validate }}"
-          echo " IsVal: $is_valid" 
-
-          
-  # -------------------------------------------
-  # SUCCESS
-  # -------------------------------------------
   on_successful_validation:
     runs-on: ubuntu-latest
     needs: validate_request
     if: needs.validate_request.outputs.is_valid == 'true'
-
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - name: DEBUG
-        run: | 
-          echo "Is_Valid: ${{ needs.validate_request.outputs.is_valid }}"
-      
-      # Checkout the forecast repo
-      # ---------------------------
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Approve validated commit
+        uses: actions/github-script@v8
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          ref: "${{ github.event.pull_request.head.sha }}"
-                    
-      # Approve pull request 
-      # ---------------------------
-      - name: Approve Pull Request
-        uses: juliangruber/approve-pull-request-action@v2.0.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          number: ${{ github.event.pull_request.number }}
+          script: |
+            const pr = context.payload.pull_request;
+            const { data } = await github.rest.pulls.get({
+              ...context.repo, pull_number: pr.number
+            });
+            if (data.head.sha !== pr.head.sha || data.base.sha !== pr.base.sha) {
+              throw new Error('PR changed after validation. A new validation is required.');
+            }
+            await github.rest.pulls.createReview({
+              ...context.repo, pull_number: pr.number,
+              commit_id: pr.head.sha, event: 'APPROVE'
+            });
 
-      # Eventually comment on it
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v2
         with:
-          message: |
-            All checks completed successfully ! :wave:
+          message: 'All checks completed successfully ! :wave:'
           pr_number: ${{ github.event.pull_request.number }}
 
-      # Merge changes  
-      # ---------------------------    
       - name: Merge the pull request
-        id: merge_pr
-        run: |
-          gh pr merge --auto --squash $PR_URL
-          echo "status=true" >> $GITHUB_OUTPUT
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          # GH_TOKEN: ${{ secrets.WF_PR_PAT }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr merge --auto --squash --match-head-commit "$HEAD_SHA" "$PR_URL"
 
-      # Save changes to artifact for later persisting 
       - name: Save changes to artifact
         env:
-          changed_files: ${{ needs.validate_request.outputs.changed_files }}
+          CHANGED_FILES: ${{ needs.validate_request.outputs.changed_files }}
         run: |
-          echo "{ \"pr-changes\" : \"$changed_files\" }" > pr_changes.json
-        
+          jq -n --arg changes "$CHANGED_FILES" '{"pr-changes": $changes}' > pr_changes.json
+
       - name: Upload changes
         uses: actions/upload-artifact@v4
         with:
           name: pr_changes
-          path: ./pr_changes.json
+          path: pr_changes.json
 
-      
-  # -------------------------------------------
-  # FAILED
-  # -------------------------------------------
   on_validation_failed:
     runs-on: ubuntu-latest
     needs: validate_request
-    if: needs.validate_request.outputs.is_valid == 'false'
-    
+    if: always() && !cancelled() && (needs.validate_request.result == 'failure' || needs.validate_request.outputs.is_valid == 'false')
+    permissions:
+      pull-requests: write
     steps:
-
-      # DEBUG ONLY
-      - name: DEBUG - DUMP INFO
-        env:
-          changed-files: ${{ needs.validate_request.outputs.changed_files }}
-          
-        run: |
-          echo ">>> Is_Valid: ${{ needs.validate_request.outputs.is_valid }}"
-          echo ">>> FAILED JOB "
-          echo ">>> Changes: $changed-files"
-          echo ">>> Repo: ${{ github.repository }}"
-          echo ">>> SrcPath: $GITHUB_WORKSPACE"
-          echo ">>> Pull request number: ${{ github.event.pull_request.number }}"
-          echo ">>> Git hub actor: ${{ github.actor }}"
-          echo ">>> Authenticate Error Message ${{ needs.validate_request.outputs.authenticate_error_msg  }}"
-          echo ">>> Validate Error Message ${{  needs.validate_request.outputs.validate_error_msg }}"
-
-
-      # Inform the user about what went wrong
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |
-            An error occurred. Validation: ${{  needs.validate_request.outputs.validate_error_msg }}. Authentication: ${{  needs.validate_request.outputs.authenticate_error_msg }}
+            An error occurred. Validation: ${{ needs.validate_request.outputs.validate_error_msg }}. Authentication: ${{ needs.validate_request.outputs.authenticate_error_msg }}.
+            If no details are shown, check the ValidateSubmission run logs for the failed step.
           pr_number: ${{ github.event.pull_request.number }}

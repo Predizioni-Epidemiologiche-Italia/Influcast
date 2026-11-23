@@ -19,14 +19,15 @@ jobs:
           
           
         steps:    
-    
+
+          # TO BE REMOVED AFTER TESTING
           # Check out the submission repo
           # -------------------------------------------      
-          - name: Checkout code
-            uses: actions/checkout@v3
-            with:
-              token: ${{ secrets.GITHUB_TOKEN }}
-              ref: ${{ github.event.pull_request.head.sha }}
+          # - name: Checkout code
+          #   uses: actions/checkout@v3
+          #   with:
+          #     token: ${{ secrets.GITHUB_TOKEN }}
+          #     ref: ${{ github.event.pull_request.head.sha }}
     
           
           # Checkout the python tools repo
@@ -72,13 +73,14 @@ jobs:
             run: | 
               echo "Is_Valid: ${{ needs.validate_request.outputs.is_valid }}"
           
+          # TO BE REMOVED AFTER TESTING
           # Checkout the forecast repo
           # ---------------------------
-          - name: Checkout code
-            uses: actions/checkout@v3
-            with:
-              token: ${{ secrets.GITHUB_TOKEN }}
-              ref: "${{ github.event.pull_request.head.sha }}"
+          # - name: Checkout code
+          #   uses: actions/checkout@v3
+          #   with:
+          #     token: ${{ secrets.GITHUB_TOKEN }}
+          #     ref: "${{ github.event.pull_request.head.sha }}"
                         
           # Approve pull request 
           # ---------------------------
