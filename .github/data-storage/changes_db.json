@@ -11,6 +11,12 @@
             "changes": [
                 "previsioni/ISI-FluBcast/2026_46.csv"
             ]
+        },
+        {
+            "model": "TriFM",
+            "changes": [
+                "previsioni/ISI-TriFM/2026_46.csv"
+            ]
         }
     ],
     "CNR4Cast": [
