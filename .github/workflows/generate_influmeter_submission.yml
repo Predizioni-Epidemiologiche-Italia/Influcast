@@ -3,7 +3,7 @@ name: GenerateInflumeterSubmission
 on:
   schedule:
     # Ogni mercoledì alle 02:00 UTC (~03:00 Roma in inverno)
-    - cron: "00 02 * * 4"
+    - cron: "15 02 * * 3"
     
   workflow_dispatch: {}
 
