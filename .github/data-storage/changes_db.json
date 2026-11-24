@@ -5,6 +5,36 @@
             "changes": [
                 "previsioni/ISI-Respiro/2026_46.csv"
             ]
+        },
+        {
+            "model": "FluBcast",
+            "changes": [
+                "previsioni/ISI-FluBcast/2026_46.csv"
+            ]
+        }
+    ],
+    "CNR4Cast": [
+        {
+            "model": "SIR_EnKF",
+            "changes": [
+                "previsioni/CNR4Cast-SIR_EnKF/2026_46.csv"
+            ]
+        }
+    ],
+    "EpiQMUL": [
+        {
+            "model": "EpiQMUL_tabpfnts",
+            "changes": [
+                "previsioni/EpiQMUL-EpiQMUL_tabpfnts/2026_46.csv"
+            ]
+        }
+    ],
+    "comunipd": [
+        {
+            "model": "mobnetSI2R",
+            "changes": [
+                "previsioni/comunipd-mobnetSI2R/2026_46.csv"
+            ]
         }
     ]
 }
