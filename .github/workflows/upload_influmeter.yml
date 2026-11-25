@@ -2,8 +2,8 @@ name: Influmeter Upload
 
 on:
   # scheduled submission every Wednesday at 00.10 a.m. (Tuesday 23.10 p.m.UTC)
-  schedule:
-    - cron: '00 03 * * 3'
+  # schedule:
+  #   - cron: '00 03 * * 3'
 
   workflow_dispatch:
 
