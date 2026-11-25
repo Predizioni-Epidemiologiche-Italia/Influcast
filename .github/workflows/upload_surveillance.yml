@@ -2,8 +2,8 @@ name: Surveillance Upload
 
 on:
   # scheduled submission every Tuesday at 23.50 p.m. (Tuesday 22.50 p.m.UTC)
-  # schedule:
-    # - cron: '50 22 * * 2'
+  schedule:
+    - cron: '50 22 * * 2'
   
   workflow_dispatch:
 
